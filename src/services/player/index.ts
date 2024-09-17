@@ -2,7 +2,6 @@ import React from 'react'
 import { Buss } from './buss'
 
 const busses: Record<string, Buss> = {
-  '0': new Buss(),
   '1': new Buss(),
   '2': new Buss(),
   '3': new Buss(),
@@ -18,6 +17,7 @@ const busses: Record<string, Buss> = {
   '13': new Buss(),
   '14': new Buss(),
   '15': new Buss(),
+  '16': new Buss(),
 }
 
 export function usePlayer({

@@ -87,8 +87,6 @@ export class Buss {
       return
     }
 
-    console.debug('Buss.play: ', padId)
-
     if (this.currentSoundId) {
       this.stop(this.currentSoundId)
     }

@@ -1,0 +1,107 @@
+
+.fill {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.flexFill {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.flex {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.flex.between {
+  justify-content: space-between;
+}
+
+.rel {
+  position: relative;
+}
+
+.ib {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vcenterer {
+  position: relative;
+  text-align: center;
+}
+.vcenterer:before {
+  content: '';
+  display: inline-block;
+  font-size: 0;
+  margin: 0;
+  height: 100%;
+  vertical-align: middle;
+  width: 0;
+}
+
+.vcenteree {
+  display: inline-block;
+  max-width: 94%;
+  position: relative;
+  vertical-align: middle;
+}
+
+.ratioSquare {
+  height: 0;
+  padding-top: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.clearfix:after {
+  clear: both;
+  content: '';
+  display: block;
+  height: 0;
+  width: 100%;
+}
+
+.ui {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.btnReset {
+  appearance: none;
+  background: none;
+  border: 0;
+}
+.btnReset:focus {
+  outline: none;
+}
+
+.fade {
+  opacity: 0;
+  transition: opacity .25s ease-out, visibility .25s ease-out;
+  visibility: hidden;
+}
+
+.fade.fadeIn {
+  opacity: 1;
+  visibility: visible;
+}

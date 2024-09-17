@@ -1,8 +1,0 @@
-@import "../core/utils";
-
-.center_screen {
-  @apply --fill;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}

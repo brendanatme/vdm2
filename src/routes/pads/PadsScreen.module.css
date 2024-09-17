@@ -1,0 +1,30 @@
+/*
+  PadsScreen.module
+*/
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-around;
+  position: relative;
+  width: 100%;
+}
+
+.body {
+  flex-grow: 1;
+  width: 100%;
+}
+
+.group {
+  max-width: 480px;
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}

@@ -1,0 +1,48 @@
+/*
+  drum-pad
+*/
+@import "../../styles/core/variables";
+
+.container {
+  float: left;
+  margin: 1%;
+  overflow: hidden;
+  position: relative;
+  width: 23%;
+}
+
+.pad {
+  background: var(--blue3);
+  border: 2px solid var(--gray2);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 1s var(--ease-out);
+}
+
+.pad.editMode {
+  border: 2px solid var(--white);
+}
+
+.pad.isPressed,
+.pad.isPressed:hover {
+  border-color: var(--red1);
+  transition: border-color 0s var(--ease-out);
+}
+
+.pad:hover,
+.pad.isEditing {
+  border-color: var(--purple1);
+  transition: border-color 0s var(--ease-out);
+}
+
+.pad.hasTouch:hover {
+  border-color: var(--white);
+}
+
+.padKey {
+  color: var(--gray2);
+  font-size: 2em;
+  font-weight: 400;
+  user-select: none;
+  text-align: center;
+}

@@ -14,9 +14,25 @@
 this is to get a holy-grail flexbox layout */
 html,
 body,
-:global(.viewport) {
+#root {
   height: 100%;
   margin: 0;
   overflow: hidden;
   width: 100%;
+}
+
+a {
+  color: var(--blue4);
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color .3s;
+}
+a:hover {
+  color: var(--blue5);
+}
+
+label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
 }

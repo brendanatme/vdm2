@@ -1,0 +1,20 @@
+
+@import '../../styles/core/variables.css';
+
+.btn {
+  border: 2px solid var(--blue4);
+  border-radius: 4px;
+  color: var(--blue4);
+  padding: 3px 8px;
+  transition: border-color .3s, color .3s;
+}
+.btn:hover {
+  border-color: var(--blue5);
+  color: var(--blue5);
+}
+
+.btn.isActive,
+.btn.isActive:hover {
+  background: var(--blue4);
+  color: var(--blue1);
+}

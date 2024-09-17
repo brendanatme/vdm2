@@ -1,15 +1,25 @@
 :root {
-  --white: #fff;
-  --gray: #999;
-  --blue: #46c;
-  --dblue: #202029;
-  --orange: #cc8444;
-  --red: #c46;
-  --dred: #d35;
-  --purple: #a4b;
-  --green: #4b6;
-  --pink: #8b3da7;
-  --header-height: 100px;
+  /* --orange: #cc8444;
+  --green: #4b6; */
   --ease-out: cubic-bezier(0,.57,.43,.99);
-  --sidebar-width: 200px;
+  
+  --black: #000;
+  --gray1: #000;
+  --gray2: #999;
+  --gray3: #999;
+  --gray4: #999;
+  --gray5: #fff;
+  --white: #fff;
+
+  --blue1: #191921;
+  --blue2: #202029;
+  --blue3: #24242f;
+  --blue4: #46c;
+  --blue5: #4b72ea;
+
+  --red1: #c46;
+  --red2: #d35;
+
+  --purple1: #8b3da7;
+  --purple2: #a4b;
 }

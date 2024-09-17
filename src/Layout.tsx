@@ -1,23 +1,29 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import './Layout.css'
+import { NavLink } from 'react-router-dom'
+import styles from './Layout.module.css'
 
 interface LayoutProps {
   children: React.ReactNode
 }
 
-export function Layout({ children }: LayoutProps) {
-  return (
-    <div className="layout">
-      <h1>VDM</h1>
-      
-      <nav className="main-nav">
-        <Link to="/">Pads</Link> |{' '}
-        <Link to="/sequencer">Sequencer</Link> |{' '}
-        <Link to="/settings">Settings</Link>
-      </nav>
+const navLinkClassNameFn: (arg: { isActive: boolean }) => string = ({ isActive }) =>
+  `${styles.navLink} ${isActive ? styles.navLinkActive : ''}`
 
-      <main>
+export function Layout({ children }: LayoutProps) {
+  
+  return (
+    <div className={styles.layout}>
+      <div className={styles.header}>
+        <h1 className={styles.logo}>VDM2</h1>
+        
+        <nav role="navigation" className={styles.nav}>
+          <NavLink className={navLinkClassNameFn} to="/">Pads</NavLink>
+          <NavLink className={navLinkClassNameFn} to="/sequencer">Sequencer</NavLink>
+          {/* <NavLink className={navLinkClassNameFn} to="/settings">Settings</NavLink> */}
+        </nav>
+      </div>
+
+      <main className={styles.main}>
         {children}
       </main>
     </div>

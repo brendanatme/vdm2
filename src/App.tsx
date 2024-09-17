@@ -5,20 +5,20 @@ import * as Routes from '~/routes'
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Routes.Root />,
-    errorElement: <Routes.ErrorPage />,
+    element: <Routes.RootLayout />,
+    errorElement: <Routes.ErrorScreen />,
     children: [
       {
         index: true,
-        element: <Routes.Pads />,
+        element: <Routes.PadsScreen />,
       },
       {
         path: 'sequencer',
-        element: <Routes.Sequencer />,
+        element: <Routes.SequencerScreen />,
       },
       {
         path: 'settings',
-        element: <Routes.Settings />,
+        element: <Routes.SettingsScreen />,
       },
     ],
   },

@@ -1,0 +1,68 @@
+/*
+  app
+*/
+@import 'styles/core/variables';
+@import 'styles/core/media';
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200..900&display=swap');
+
+body {
+  background: var(--blue2);
+  color: var(--white);
+  font-family: 'Source Code Pro',  monospace;
+  font-size: 16px;
+}
+
+.layout {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  padding: 1rem 1.5rem;
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  flex-grow: 1;
+  position: relative;
+  width: 100%;
+}
+
+/*
+  nav
+*/
+
+.logo {
+  margin: 0 .75rem 0 0;
+}
+
+.nav {
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.navLink {
+  color: var(--blue4);
+  display: block;
+  margin: 0 0.5rem;
+  text-align: center;
+}
+
+.navLinkActive {
+  color: var(--white) !important;
+}
+
+@media (--mobile) {
+  .navLink {
+    font-size: 12px;
+  }
+}
