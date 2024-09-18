@@ -31,7 +31,9 @@ export function PotInput({ name, onChange, value }: PotInputProps) {
   const [mouseMoved, setMouseMoved] = React.useState<number>(0)
   const dragHandler = useDragHandler({
     onDragStart: (e) => { mouseStart.current = e.clientY },
-    onDrag: (e) => setMouseMoved(mouseStart.current - e.clientY),
+    onDrag: (e) => setMouseMoved(
+      mouseStart.current - ('clientY' in e ? e.clientY : e.touches[0].clientY)
+    ),
     onDragEnd: () => onChange?.(calculatedValueRef.current),
   })
 

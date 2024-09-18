@@ -1,8 +1,9 @@
 import React from 'react'
 import { Square } from '~/components/Square'
 import { Modal, useModalState } from '~/components/Modal'
-import { usePlayer } from '~/services/player'
 import { useKeyHandler, KeyboardEvents } from '~/hooks/useKeyHandler'
+import { NormalizedEvents } from '~/services/normalizedEvents'
+import { usePlayer } from '~/services/player'
 import { State } from '~/state'
 import { _ } from '~/utils'
 import { PadCircle } from './PadCircle'
@@ -49,7 +50,8 @@ export const Pad = React.memo(function Pad({ bussId, endTime, id, keyName, src, 
 
   /**
    * User can use keyboard to play sound
-   */  const aModalIsOpen = State.useState(State.select.modals.aModalIsOpen)
+   */
+  const aModalIsOpen = State.useState(State.select.modals.aModalIsOpen)
   useKeyHandler({
     callback: onPlay,
     condition: !aModalIsOpen,
@@ -78,7 +80,9 @@ export const Pad = React.memo(function Pad({ bussId, endTime, id, keyName, src, 
           isPressed ? styles.isPressed : '',
           editKitMode ? styles.editMode : '',
         )}
-        onClick={handlePadClick}
+        {...{
+          [NormalizedEvents.onMouseDown]: handlePadClick
+        }}
       >
         <PadCircle ref={padCircleRef} />
         <div className={styles.padKey}>{keyName}</div>
