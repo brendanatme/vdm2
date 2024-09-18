@@ -1,3 +1,4 @@
+import React from 'react'
 
 function detectTouchscreen() {
   var result = false;
@@ -20,6 +21,12 @@ function detectTouchscreen() {
 }
 
 const isTouchScreen = detectTouchscreen()
+
+type NormalizedEventTypes = MouseEvent | React.MouseEvent | TouchEvent | React.TouchEvent
+
+export const getNormalizedEventProp = <T>(propKey: keyof MouseEvent | keyof Touch) =>
+  (e: NormalizedEventTypes): T =>
+    propKey in e ? (e as MouseEvent)[propKey as keyof MouseEvent] as T : (e as TouchEvent).changedTouches[0][propKey as keyof Touch] as T
 
 export const NormalizedEvents = {
   mousedown: isTouchScreen ? 'touchstart' : 'mousedown',

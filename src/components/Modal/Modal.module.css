@@ -1,7 +1,7 @@
 /*
   modal
 */
-@import "../../styles/core/variables";
+@import '../../styles/core/variables';
 
 .modal {
   position: absolute !important;
@@ -13,8 +13,8 @@
 
 .content {
   background: rgba(0, 0, 0, .85);
-  border: 1px solid rgba(var(--white), 1);
-  border-radius: 10px;
+  border: 1px solid var(--gray2);
+  border-radius: 4px;
   height: 1px;
   overflow: hidden;
   width: 1px;

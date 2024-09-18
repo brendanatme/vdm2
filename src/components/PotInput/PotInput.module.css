@@ -8,10 +8,9 @@
 .pot {
   border: 1px solid var(--white);
   border-radius: calc(var(--pot-diameter) / 2);
-  cursor: pointer;
-  width: var(--pot-diameter);
   position: relative;
   height: var(--pot-diameter);
+  width: var(--pot-diameter);
 }
 
 .notch {

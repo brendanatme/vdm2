@@ -1,6 +1,7 @@
 import React from 'react'
-import { useDragHandler } from '~/hooks/useDragHandler'
-import { clamp } from '~/utils'
+import { getNormalizedEventProp, useDragHandler } from '~/hooks/useDragHandler'
+import { clamp, _ } from '~/utils'
+import uStyles from '~/styles/core/utils.module.css'
 import styles from './PotInput.module.css'
 
 interface PotInputProps {
@@ -12,6 +13,8 @@ interface PotInputProps {
 const MOUSE_MOVE_RANGE = 140
 
 const ratioToDeg = (r: number): number => r * 270 - 135
+
+const getClientY = getNormalizedEventProp<number>('clientY')
 
 export function PotInput({ name, onChange, value }: PotInputProps) {
   /**
@@ -30,11 +33,15 @@ export function PotInput({ name, onChange, value }: PotInputProps) {
   const mouseStart = React.useRef<number>(0)
   const [mouseMoved, setMouseMoved] = React.useState<number>(0)
   const dragHandler = useDragHandler({
-    onDragStart: (e) => { mouseStart.current = e.clientY },
-    onDrag: (e) => setMouseMoved(
-      mouseStart.current - ('clientY' in e ? e.clientY : e.touches[0].clientY)
-    ),
-    onDragEnd: () => onChange?.(calculatedValueRef.current),
+    onDragStart: (e) => {
+      mouseStart.current = getClientY(e)
+    },
+    onDrag: (e) => {
+      setMouseMoved(mouseStart.current - getClientY(e))
+    },
+    onDragEnd: (e) => {
+      onChange?.(calculatedValueRef.current)
+    },
   })
 
   React.useEffect(() => {
@@ -45,7 +52,7 @@ export function PotInput({ name, onChange, value }: PotInputProps) {
   return (
     <div
       {...dragHandler}
-      className={styles.pot}
+      className={_(uStyles.ui, styles.pot)}
       style={{ transform: `rotate(${ratioToDeg(displayValue)}deg)` }}
     >
       <div className={styles.notch} />
