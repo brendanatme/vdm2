@@ -88,7 +88,7 @@ export const Pad = React.memo(function Pad({ bussId, endTime, id, keyName, src, 
           heading={`EDIT PAD (${keyName})`}
           id={`edit-pad-modal-${id}`}
         >
-          <PadSettings padId={id} volume={volume} />
+          <PadSettings bussId={bussId} padId={id} volume={volume} />
         </Modal>
       </Square>
     </div>

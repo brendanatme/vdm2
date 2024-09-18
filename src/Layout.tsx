@@ -16,11 +16,10 @@ export function Layout({ children }: LayoutProps) {
       <div className={styles.header}>
         <h1 className={styles.logo}>VDM2</h1>
         
-        <nav role="navigation" className={styles.nav}>
+        {/* <nav role="navigation" className={styles.nav}>
           <NavLink className={navLinkClassNameFn} to="/">Pads</NavLink>
           <NavLink className={navLinkClassNameFn} to="/sequencer">Sequencer</NavLink>
-          {/* <NavLink className={navLinkClassNameFn} to="/settings">Settings</NavLink> */}
-        </nav>
+        </nav> */}
       </div>
 
       <main className={styles.main}>

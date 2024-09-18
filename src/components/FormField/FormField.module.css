@@ -1,0 +1,11 @@
+
+.container {
+  padding: 1rem;
+}
+
+.input {
+  align-items: center;
+  display: flex;
+  height: calc(60px + 1rem);
+  justify-content: center;
+}

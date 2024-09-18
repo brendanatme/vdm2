@@ -1,6 +1,6 @@
 import React from 'react'
 import { _ } from '~/utils'
-import utilStyles from '~/styles/core/utils.module.css'
+import uStyles from '~/styles/core/utils.module.css'
 import styles from './Button.module.css'
 
 interface ButtonProps {
@@ -14,8 +14,8 @@ export function Button({ isActive, label, onClick, type = 'button' }: ButtonProp
   return (
     <button
       className={_(
-        utilStyles.btnReset,
-        utilStyles.ui,
+        uStyles.btnReset,
+        uStyles.ui,
         styles.btn,
         isActive ? styles.isActive : '',
       )}

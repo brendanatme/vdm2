@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '~/styles/core/utils.module.css'
+import uStyles from '~/styles/core/utils.module.css'
 import { _ } from '~/utils'
 
 interface SquareProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -9,8 +9,8 @@ interface SquareProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export function Square({ children = null, className = '', ...props }: SquareProps) {
   return (
-    <div className={_(styles.ratioSquare, className)} {...props}>
-      <div className={styles.flexFill}>
+    <div className={_(uStyles.ratioSquare, className)} {...props}>
+      <div className={uStyles.flexFill}>
         {children}
       </div>
     </div>

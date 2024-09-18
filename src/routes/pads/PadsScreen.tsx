@@ -1,9 +1,9 @@
 import React from 'react'
 import { useShallow } from 'zustand/react/shallow'
-import { KitSwitcher } from '~/components/KitSwitcher'
+import { KitControls } from '~/components/KitControls'
 import { Pad } from '~/components/Pad'
 import { State } from '~/state'
-import utilStyles from '~/styles/core/utils.module.css'
+import uStyles from '~/styles/core/utils.module.css'
 import { _ } from '~/utils'
 import styles from './PadsScreen.module.css'
 
@@ -14,7 +14,7 @@ export function PadsScreen() {
   return (
     <div className={styles.container}>
       <div className={styles.body}>
-        <div className={_(utilStyles.clearfix, utilStyles.center, styles.group)}>
+        <div className={_(uStyles.clearfix, uStyles.pageWidth, styles.group)}>
           {padIds.map((padId) => (
             <Pad
               {...selectedKitPadsIndexed[padId]}
@@ -25,7 +25,7 @@ export function PadsScreen() {
         </div>
       </div>
       <div className={styles.footer}>
-        <KitSwitcher />
+        <KitControls />
       </div>
     </div>
   )

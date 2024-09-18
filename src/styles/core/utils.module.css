@@ -78,6 +78,15 @@
   width: 100%;
 }
 
+.pageWidth {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 480px;
+  padding: 0 1rem;
+  position: relative;
+  width: 100%;
+}
+
 .ui {
   cursor: pointer;
 }

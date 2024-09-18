@@ -8,13 +8,6 @@
   width: 100%;
 }
 
-.pageWidth {
-  margin: 0 auto;
-  max-width: 460px;
-  position: relative;
-  width: 100%;
-}
-
 .editMsg {
   margin: 1.5rem auto;
   position: absolute;

@@ -1,7 +1,10 @@
-import { sortBy } from '~/utils'
 import { StoreState } from '../types'
-import { Kit } from './kit.types'
-import { defaultKitTypeFilter, getSelectedKitPadsAndEditsIndexed, mapAndSortKits, userKitTypeFilter } from './kit.utils'
+import {
+  defaultKitTypeFilter,
+  getSelectedKitPadsAndEditsIndexed,
+  mapAndSortKits,
+  userKitTypeFilter,
+} from './kit.utils'
 
 export const kitSelectors = {
   // state

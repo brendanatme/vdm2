@@ -1,5 +1,7 @@
 import React from 'react'
 import { Button } from '~/components/Button'
+import { FormField } from '~/components/FormField'
+import { TextInput } from '~/components/TextInput'
 import { State } from '~/state'
 
 interface SaveKitFormProps {
@@ -23,10 +25,10 @@ export function SaveKitForm({ onSuccess }: SaveKitFormProps) {
 
   return (
     <form id="SaveKitForm" onSubmit={handleSubmit}>
-      <div>
-        <label>Kit Name</label>
-        <input name="name" required type="text" />
-      </div>
+      <FormField label="Kit Name">
+        <TextInput large name="name" required />
+      </FormField>
+      <br />
       <Button label="Save Kit" type="submit" />
     </form>
   )

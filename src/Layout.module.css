@@ -6,13 +6,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200..900&display=swap');
 
-body {
-  background: var(--blue2);
-  color: var(--white);
-  font-family: 'Source Code Pro',  monospace;
-  font-size: 16px;
-}
-
 .layout {
   align-items: center;
   display: flex;
@@ -25,7 +18,7 @@ body {
   align-items: center;
   display: flex;
   justify-content: flex-start;
-  padding: 1rem 1.5rem;
+  padding: 1rem;
   width: 100%;
 }
 
@@ -41,6 +34,7 @@ body {
 */
 
 .logo {
+  font-size: 2rem;
   margin: 0 .75rem 0 0;
 }
 
@@ -53,16 +47,11 @@ body {
 .navLink {
   color: var(--blue4);
   display: block;
+  font-size: 1rem;
   margin: 0 0.5rem;
   text-align: center;
 }
 
 .navLinkActive {
   color: var(--white) !important;
-}
-
-@media (--mobile) {
-  .navLink {
-    font-size: 12px;
-  }
 }

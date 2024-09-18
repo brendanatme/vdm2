@@ -1,0 +1,49 @@
+
+@import '../../styles/core/variables.css';
+
+.container {
+  border: 1px solid var(--white);
+  border-radius: 4px;
+  color: var(--white);
+  font-size: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.selectReset {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  padding: .25rem 1.25rem .25rem .4rem;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  outline: none;
+}
+
+.container.lg .selectReset {
+  padding: .75rem 2rem .75rem 1rem;
+}
+
+.container.lg .triangle {
+  right: 1rem;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: .33rem solid transparent;
+  border-right: .33rem solid transparent;
+  position: absolute;
+  right: .5rem;
+  top: calc(50% - .25rem);
+  pointer-events: none;
+}
+
+.triangle.triangleDown {
+  border-top: 0.5rem solid var(--white);
+}

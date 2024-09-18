@@ -4,7 +4,7 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 import { KeyboardEvents, useKeyHandler } from '~/hooks/useKeyHandler'
-import utilStyles from '~/styles/core/utils.module.css'
+import uStyles from '~/styles/core/utils.module.css'
 import styles from './Modal.module.css'
 import { _ } from '~/utils'
 import { State } from '~/state'
@@ -58,26 +58,26 @@ export function Modal({ children = null, close, heading, id, isOpen }: ModalProp
   return ReactDom.createPortal((
     <div
       className={_(
-        utilStyles.vcenterer,
-        utilStyles.fade,
-        utilStyles.fill,
-        isOpen ? utilStyles.fadeIn : '',
+        uStyles.vcenterer,
+        uStyles.fade,
+        uStyles.fill,
+        isOpen ? uStyles.fadeIn : '',
         isOpen ? styles.fadeIn : '',
         styles.modal,
       )}
     >
       <div
-        className={_(utilStyles.fill, styles.bg)}
+        className={_(uStyles.fill, styles.bg)}
         onClick={close}
       />
 
-      <div className={_(styles.content, utilStyles.vcenteree)}>
+      <div className={_(styles.content, uStyles.vcenteree)}>
         {isOpen && heading && <h2>{heading}</h2>}
         {isOpen && children}
       </div>
 
       <a
-        className={_(utilStyles.ui, utilStyles.btnReset, styles.close)}
+        className={_(uStyles.ui, uStyles.btnReset, styles.close)}
         onClick={close}
       >
         X (Esc)

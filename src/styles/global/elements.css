@@ -1,3 +1,6 @@
+@import '../core/variables.css';
+@import '../core/media.css';
+
 /* flex bugfix */
 * {
   flex-shrink: 1;
@@ -21,6 +24,19 @@ body,
   width: 100%;
 }
 
+body {
+  background: var(--blue2);
+  color: var(--white);
+  font-family: 'Source Code Pro', monospace;
+  font-size: 16px;
+}
+
+@media (--mobile) {
+  .body {
+    font-size: 12px;
+  }
+}
+
 a {
   color: var(--blue4);
   cursor: pointer;
@@ -32,6 +48,7 @@ a:hover {
 }
 
 label {
+  display: block;
   font-size: 0.8rem;
   font-weight: 500;
   text-transform: uppercase;

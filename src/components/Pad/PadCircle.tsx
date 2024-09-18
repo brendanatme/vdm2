@@ -1,6 +1,6 @@
 import React from 'react'
 import moJs from 'mo-js'
-import styles from '~/styles/core/utils.module.css'
+import uStyles from '~/styles/core/utils.module.css'
 
 /**
  * PadCircle
@@ -43,7 +43,7 @@ export const PadCircle = React.forwardRef(function PadCircle({}, ref) {
   return (
     <div
       ref={elRef}
-      className={styles.fill}
+      className={uStyles.fill}
     />
   )
 })
