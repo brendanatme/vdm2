@@ -6,6 +6,7 @@ import { NormalizedEvents } from '~/services/normalizedEvents'
 import { usePlayer } from '~/services/player'
 import { State } from '~/state'
 import { _ } from '~/utils'
+import uStyles from '~/styles/core/utils.module.css'
 import { PadCircle } from './PadCircle'
 import styles from './Pad.module.css'
 import { PadSettings } from './PadSettings'
@@ -41,7 +42,8 @@ export const Pad = React.memo(function Pad({ bussId, endTime, id, keyName, src, 
   const [isPressed, setIsPressed] = React.useState(false)
   const padCircleRef = React.useRef<{ play: () => void }>(null)
   const player = usePlayer({ bussId, endTime, padId: id, src, startTime, volume })
-  const onPlay = React.useCallback(() => {
+  const onPlay = React.useCallback((e?: MouseEvent | TouchEvent) => {
+    e?.preventDefault()
     player.play()
     padCircleRef.current?.play()
     setIsPressed(true)
@@ -66,24 +68,24 @@ export const Pad = React.memo(function Pad({ bussId, endTime, id, keyName, src, 
    * or open the edit modal. If the edit modal is open,
    * clicking should do nothing
    */
-  const handlePadClick = editKitMode
-    ? !modal.isOpen
+  const squareProps = {
+    className: _(
+      uStyles.ui,
+      styles.pad,
+      isPressed ? styles.isPressed : '',
+      editKitMode ? styles.editMode : '',
+    ),
+    [NormalizedEvents.onMouseDown]: !editKitMode
+      ? onPlay
+      : undefined,
+    [NormalizedEvents.onMouseUp]: editKitMode && !modal.isOpen
       ? modal.open
-      : undefined
-    : onPlay
+      : undefined,
+  }
 
   return (
     <div className={styles.container}>
-      <Square
-        className={_(
-          styles.pad,
-          isPressed ? styles.isPressed : '',
-          editKitMode ? styles.editMode : '',
-        )}
-        {...{
-          [NormalizedEvents.onMouseDown]: handlePadClick
-        }}
-      >
+      <Square {...squareProps}>
         <PadCircle ref={padCircleRef} />
         <div className={styles.padKey}>{keyName}</div>
         <Modal

@@ -15,7 +15,6 @@
   background: var(--blue3);
   border: 2px solid var(--gray2);
   border-radius: 8px;
-  cursor: pointer;
   transition: border-color 1s var(--ease-out);
 }
 
