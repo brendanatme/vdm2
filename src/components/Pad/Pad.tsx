@@ -42,8 +42,7 @@ export const Pad = React.memo(function Pad({ bussId, endTime, id, keyName, src, 
   const [isPressed, setIsPressed] = React.useState(false)
   const padCircleRef = React.useRef<{ play: () => void }>(null)
   const player = usePlayer({ bussId, endTime, padId: id, src, startTime, volume })
-  const onPlay = React.useCallback((e?: MouseEvent | TouchEvent) => {
-    e?.preventDefault()
+  const onPlay = React.useCallback(() => {
     player.play()
     padCircleRef.current?.play()
     setIsPressed(true)
