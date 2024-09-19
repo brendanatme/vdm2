@@ -1,4 +1,6 @@
 
+@import '../../styles/core/media.css';
+
 .body {
   flex-grow: 1;
   width: 100%;
@@ -9,7 +11,13 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  
+  background-color: var(--blue1);
+  padding: 0.5rem 0 1.5rem;
+  position: relative;
+  width: 100%;
 }
+
 
 .group {
   background: var(--blue3);

@@ -12,7 +12,7 @@ const navLinkClassNameFn: (arg: { isActive: boolean }) => string = ({ isActive }
 export function Layout({ children }: LayoutProps) {
   
   return (
-    <div className={styles.layout}>
+    <div id="layout" className={styles.layout}>
       <div className={styles.header}>
         <h1 className={styles.logo}>VDM2</h1>
         

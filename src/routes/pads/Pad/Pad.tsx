@@ -46,6 +46,10 @@ export const Pad = React.memo(function Pad({ bussId, endTime, id, keyName, src, 
     player.play()
     padCircleRef.current?.play()
     setIsPressed(true)
+    if ((window as any).__HYPE_MODE__) {
+      document.getElementById('layout')?.classList.remove('animJolt')
+      requestAnimationFrame(() => document.getElementById('layout')?.classList.add('animJolt'))
+    }
     setTimeout(() => setIsPressed(false), 100)
   }, [player.play])
 

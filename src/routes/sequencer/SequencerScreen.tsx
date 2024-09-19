@@ -31,41 +31,45 @@ export function SequencerScreen() {
   const sequencePlayer = useSequencePlayer({ bpm: !bpm ? 120 : bpm, onStepChange: getStepIndex, padsIndexed, steps })
 
   return (
-    <div className={_(uStyles.pageWidth, uStyles.narrow)}>
+    <div className={_(uStyles.flex, uStyles.column, uStyles.rel)}>
       <div className={styles.body}>
-        <div className={styles.group}>
-          {steps.map((step, i) => (
-            <SequencerStep
-              config={step}
-              eventName={EVENT_NAME}
-              index={i}
-              key={`${i}`}
-              onClick={updateStepPad}
-              showLabel={i === 0}
-            />
-          ))}
+        <div className={_(uStyles.pageWidth, uStyles.narrow)}>
+          <div className={styles.group}>
+            {steps.map((step, i) => (
+              <SequencerStep
+                config={step}
+                eventName={EVENT_NAME}
+                index={i}
+                key={`${i}`}
+                onClick={updateStepPad}
+                showLabel={i === 0}
+              />
+            ))}
+          </div>
         </div>
       </div>
       <div className={styles.footer}>
-        <div className={_(uStyles.flex, uStyles.fullWidth)}>
-          <div className={_(uStyles.flex, uStyles.basisThird, uStyles.start)}>
-            <NumberInput large name="bpm" onChange={handleBpmChange} short value={bpm} />
-            <span>&nbsp;</span>
-            BPM
-          </div>
-          <div className={_(uStyles.flex, uStyles.basisThird)}>
-            <PlayButton
-              isPlaying={sequencePlayer.isPlaying}
-              play={sequencePlayer.play}
-              stop={sequencePlayer.stop}
-            />
-          </div>
-          <div className={_(uStyles.flex, uStyles.basisThird, uStyles.end)}>
-            <span>PADS</span>
-            <span>&nbsp;</span>
-            <span>&lt;</span>
-            <span>&nbsp;</span>
-            <span>&gt;</span>
+        <div className={_(uStyles.pageWidth, uStyles.narrow)}>
+          <div className={_(uStyles.flex, uStyles.fullWidth)}>
+            <div className={_(uStyles.flex, uStyles.basisThird, uStyles.start)}>
+              <NumberInput large name="bpm" onChange={handleBpmChange} short value={bpm} />
+              <span>&nbsp;</span>
+              BPM
+            </div>
+            <div className={_(uStyles.flex, uStyles.basisThird)}>
+              <PlayButton
+                isPlaying={sequencePlayer.isPlaying}
+                play={sequencePlayer.play}
+                stop={sequencePlayer.stop}
+              />
+            </div>
+            <div className={_(uStyles.flex, uStyles.basisThird, uStyles.end)}>
+              <span>PADS</span>
+              <span>&nbsp;</span>
+              <span>&lt;</span>
+              <span>&nbsp;</span>
+              <span>&gt;</span>
+            </div>
           </div>
         </div>
       </div>

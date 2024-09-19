@@ -24,6 +24,13 @@
   justify-content: center;
 }
 
+.flex.column {
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-around;
+  width: 100%;
+}
+
 .flex.between {
   justify-content: space-between;
 }

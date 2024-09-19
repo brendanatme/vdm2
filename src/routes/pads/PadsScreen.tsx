@@ -12,7 +12,7 @@ export function PadsScreen() {
   const padIds = State.useState(State.select.pads.padIds)
   const selectedKitPadsIndexed = State.useState(useShallow(State.select.kits.selectedKitPadsIndexed))
   return (
-    <div className={styles.container}>
+    <div className={_(uStyles.flex, uStyles.column, uStyles.rel)}>
       <div className={styles.body}>
         <div className={_(uStyles.clearfix, uStyles.pageWidth, styles.group)}>
           {padIds.map((padId) => (
