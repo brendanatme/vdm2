@@ -28,6 +28,19 @@
   justify-content: space-between;
 }
 
+.flex.start {
+  justify-content: flex-start;
+}
+
+.flex.end {
+  justify-content: flex-end;
+}
+
+.basisThird {
+  flex-basis: 33.3%;
+  flex-shrink: 0;
+}
+
 .rel {
   position: relative;
 }
@@ -70,11 +83,22 @@
   width: 100%;
 }
 
+.ratioThreeQuarters {
+  height: 0;
+  padding-top: 75%;
+  position: relative;
+  width: 100%;
+}
+
 .clearfix:after {
   clear: both;
   content: '';
   display: block;
   height: 0;
+  width: 100%;
+}
+
+.fullWidth {
   width: 100%;
 }
 
@@ -85,6 +109,11 @@
   padding: 0 1rem;
   position: relative;
   width: 100%;
+}
+
+.pageWidth.narrow {
+  max-width: 504px;
+  padding: 0 3rem;
 }
 
 .ui {

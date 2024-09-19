@@ -1,0 +1,10 @@
+
+.container {
+  overflow: hidden;
+  /* transition: background-color .275s; */
+  transition: background-color 0 .01s;
+}
+
+.container.highlight {
+  background: rgba(255,255,255,.1);
+}

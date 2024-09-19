@@ -1,6 +1,3 @@
-@import '../core/variables.css';
-@import '../core/media.css';
-
 /* flex bugfix */
 * {
   flex-shrink: 1;
@@ -18,23 +15,26 @@ this is to get a holy-grail flexbox layout */
 html,
 body,
 #root {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 16px;
   height: 100%;
   margin: 0;
   overflow: hidden;
   width: 100%;
 }
 
+@media (--mobile) {
+  html,
+  body,
+  #root {
+    font-size: 12px;
+  }
+}
+
 body {
   background: var(--blue2);
   color: var(--white);
-  font-family: 'Source Code Pro', monospace;
-  font-size: 16px;
-}
-
-@media (--mobile) {
-  .body {
-    font-size: 12px;
-  }
+  
 }
 
 a {

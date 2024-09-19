@@ -5,9 +5,9 @@
   
   --black: #000;
   --gray1: #000;
-  --gray2: #999;
+  --gray2: #666;
   --gray3: #999;
-  --gray4: #999;
+  --gray4: #bbb;
   --gray5: #fff;
   --white: #fff;
 
@@ -20,6 +20,7 @@
   --red1: #c46;
   --red2: #d35;
 
-  --purple1: #8b3da7;
-  --purple2: #a4b;
+  --purple1: #773390;
+  --purple2: #8b3da7;
+  --purple3: #a4b;
 }

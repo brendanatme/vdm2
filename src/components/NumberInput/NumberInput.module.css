@@ -12,3 +12,11 @@
 .input.lg {
   padding: .75rem;
 }
+
+.input.short {
+  width: 2.667rem;
+}
+
+.input.short.lg {
+  width: 3.5rem;
+}

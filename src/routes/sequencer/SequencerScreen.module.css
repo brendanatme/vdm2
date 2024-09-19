@@ -1,0 +1,40 @@
+
+.body {
+  flex-grow: 1;
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.group {
+  background: var(--blue3);
+  border: 1px solid var(--gray2);
+  border-radius: 4px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+@media (--desktop) {
+  .group {
+    transform: rotate(270deg);
+  }
+}
+
+.stepPad {
+  float: left;
+  position: relative;
+  width: 12.5%;
+}
+
+.stepPadSquare {
+  border: 1px solid var(--gray2);
+  box-sizing: border-box;
+  width: 100%;
+}

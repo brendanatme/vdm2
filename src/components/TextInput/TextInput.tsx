@@ -5,16 +5,20 @@ import { _ } from '~/utils'
 interface TextInputProps {
   large?: boolean
   name: string
+  onChange?: React.ChangeEventHandler<HTMLInputElement>
+  value?: string
   required?: boolean
 }
 
-export function TextInput({ large = false, name, required = false }: TextInputProps) {
+export function TextInput({ large = false, name, onChange, required = false, value }: TextInputProps) {
   return (
     <input
       className={_(styles.input, large ? styles.lg : '')}
       name={name}
+      onChange={onChange}
       required={required}
       type="text"
+      value={value}
     />
   )
 }

@@ -1,0 +1,27 @@
+
+.stepPad {
+  float: left;
+  position: relative;
+  width: 12.5%;
+}
+
+.stepPadSquare {
+  border: 1px solid var(--gray2);
+  box-sizing: border-box;
+  transition: background-color .4s;
+  width: 100%;
+}
+
+.stepPad:hover .stepPadSquare {
+  border-color: var(--white);
+}
+
+.stepPadSquare.isActive {
+  background-color: var(--purple1);
+  transition: background-color 0 .01s;
+  /* transition: background-color .275s; */
+}
+
+.stepPadSquare.isActive.isHighlighted {
+  background-color: var(--red1);
+}

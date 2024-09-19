@@ -1,0 +1,32 @@
+
+:root {
+  --play-btn-diameter: 4rem;
+}
+
+.container {
+  background-color: var(--blue4);
+  border-radius: calc(var(--play-btn-diameter) / 2);
+  height: var(--play-btn-diameter);
+  width: var(--play-btn-diameter);
+  transition: background-color .3s;
+}
+
+.container:hover {
+  background-color: var(--blue5);
+}
+
+.triangle {
+  border-bottom: calc(var(--play-btn-diameter) / 6) solid transparent;
+  border-top: calc(var(--play-btn-diameter) / 6) solid transparent;
+  border-left: calc(var(--play-btn-diameter) / 4) solid var(--white);
+  height: 0;
+  width: 0;
+  position: relative;
+  left: calc(var(--play-btn-diameter) / 20);
+}
+
+.square {
+  background-color: var(--white);
+  height: 1rem;
+  width: 1rem;
+}

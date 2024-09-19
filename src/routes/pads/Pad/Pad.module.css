@@ -1,7 +1,7 @@
 /*
   drum-pad
 */
-@import "../../styles/core/variables";
+@import "../../../styles/core/variables";
 
 .container {
   float: left;
@@ -30,7 +30,7 @@
 
 .pad:hover,
 .pad.isEditing {
-  border-color: var(--purple1);
+  border-color: var(--purple2);
   transition: border-color 0s var(--ease-out);
 }
 
