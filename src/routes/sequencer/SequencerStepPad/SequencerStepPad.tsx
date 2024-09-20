@@ -25,10 +25,20 @@ export const SequencerStepPad = React.memo(function SequencerStepPad({
 }: SequencerStepPadProps) {
   const keyName = State.useState(State.select.pads.getKeyNameByPadId(padId))
   const handleToggle = React.useCallback(() => onClick(step, padId), [onClick, padId, step])
+  
+  /**
+   * If user drags over (left button is pressed while mouseEnter occurs),
+   * do toggle.
+   */
+  const handleDrag = React.useCallback(
+    (e: React.MouseEvent) => e.buttons === 1 && onClick(step, padId),
+    [onClick, padId, step],
+  )
 
   const props = {
-    className: _(uStyles.ui, styles.stepPad),
+    className: _(uStyles.ui, styles.stepPad, styles[`step${step}`]),
     [NormalizedEvents.onMouseDown]: handleToggle,
+    [NormalizedEvents.onMouseEnter]: handleDrag,
   }
 
   return (

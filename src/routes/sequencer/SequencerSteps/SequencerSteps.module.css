@@ -1,6 +1,13 @@
 
 @import '../../../styles/core/media.css';
 
+@media (--desktop) {
+  .component {
+    margin-bottom: -10rem;
+    transform: translateY(-60px) rotate(270deg);
+  }
+}
+
 .container {
   background: var(--blue3);
   border: 1px solid var(--gray2);
@@ -9,12 +16,6 @@
   overflow: hidden;
   position: relative;
   width: 100%;
-}
-
-@media (--desktop) {
-  .container {
-    transform: rotate(270deg);
-  }
 }
 
 .group {
@@ -26,4 +27,10 @@
 
 .group.page1 {
   transform: translateX(-50%);
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  padding: .5rem 0;
 }

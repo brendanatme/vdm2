@@ -9,7 +9,8 @@ import { BpmInput } from './BpmInput'
 import { PlayButton } from './PlayButton'
 import { SequencerSteps } from './SequencerSteps'
 import styles from './SequencerScreen.module.css'
-import { ArrowButton } from '~/components/ArrowButton'
+import { KitSwitcher } from '../pads/KitControls/KitSwitcher'
+
 
 const EVENT_NAME = 'sequencerStepChanged'
 
@@ -28,38 +29,25 @@ export function SequencerScreen() {
     steps,
   })
 
-  /**
-   * sequencer steps
-   */
-  const [stepPage, setStepPage] = React.useState<0 | 1>(0)
-  const goToPage0 = React.useCallback(() => setStepPage(0), [])
-  const goToPage1 = React.useCallback(() => setStepPage(1), [])
-
   return (
     <div className={_(uStyles.flex, uStyles.column, uStyles.rel)}>
       <div className={styles.body}>
-        <SequencerSteps eventName={EVENT_NAME} page={stepPage} steps={steps} />
+        <SequencerSteps eventName={EVENT_NAME} steps={steps} />
       </div>
       <div className={styles.footer}>
         <div className={_(uStyles.pageWidth, uStyles.narrow)}>
-          <div className={_(uStyles.flex, uStyles.fullWidth)}>
-            <div className={_(uStyles.flex, uStyles.basisThird, uStyles.start)}>
-              <BpmInput large short />
+          <div className={_(uStyles.flex, uStyles.fullWidth, uStyles.between)}>
+            <div className={_(uStyles.flex)}>
+              <KitSwitcher />
             </div>
-            <div className={_(uStyles.flex, uStyles.basisThird)}>
+            <div className={_(uStyles.flex)}>
+              <BpmInput large short />
+              <span>&nbsp;</span>
               <PlayButton
                 isPlaying={sequencePlayer.isPlaying}
                 play={sequencePlayer.play}
                 stop={sequencePlayer.stop}
               />
-            </div>
-            <div className={_(uStyles.flex, uStyles.basisThird, uStyles.end)}>
-              <span>PADS</span>
-              <span>&nbsp;</span>
-
-              <ArrowButton isDisabled={stepPage === 0} onClick={goToPage0} prev />
-              <span>&nbsp;</span>
-              <ArrowButton isDisabled={stepPage === 1} onClick={goToPage1} next />
             </div>
           </div>
         </div>

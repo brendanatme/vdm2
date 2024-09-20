@@ -1,4 +1,6 @@
 
+@import '../../../styles/core/media.css';
+
 .stepPad {
   float: left;
   position: relative;
@@ -6,10 +8,32 @@
 }
 
 .stepPadSquare {
-  border: 1px solid var(--gray2);
+  border: 1px solid var(--gray1);
   box-sizing: border-box;
   transition: background-color .4s;
   width: 100%;
+}
+.stepPad:first-child .stepPadSquare,
+.stepPad:nth-child(9) .stepPadSquare {
+  border-left-color: var(--gray2);
+}
+.stepPad:nth-child(8) .stepPadSquare,
+.stepPad:last-child .stepPadSquare {
+  border-right-color: var(--gray2);
+}
+
+.stepPad.step0 .stepPadSquare,
+.stepPad.step4 .stepPadSquare,
+.stepPad.step8 .stepPadSquare,
+.stepPad.step12 .stepPadSquare {
+  border-top-color: var(--gray1-5);
+}
+
+.stepPad.step3 .stepPadSquare,
+.stepPad.step7 .stepPadSquare,
+.stepPad.step11 .stepPadSquare,
+.stepPad.step15 .stepPadSquare {
+  border-bottom-color: var(--gray1-5);
 }
 
 .stepPad:hover .stepPadSquare {

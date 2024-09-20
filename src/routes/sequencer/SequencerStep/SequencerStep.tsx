@@ -35,7 +35,7 @@ export const SequencerStep = React.memo(function SequencerStep({
       <SequencerStepPad isActive={config["14"]} isHighlighted={isHighlighted} onClick={onClick} padId="14" showLabel={showLabel} step={index} />
       <SequencerStepPad isActive={config["15"]} isHighlighted={isHighlighted} onClick={onClick} padId="15" showLabel={showLabel} step={index} />
       <SequencerStepPad isActive={config["16"]} isHighlighted={isHighlighted} onClick={onClick} padId="16" showLabel={showLabel} step={index} />
-      <SequencerStepPad isActive={config["9"]}  isHighlighted={isHighlighted} onClick={onClick} padId="9"  showLabel={showLabel} step={index} />
+      <SequencerStepPad isActive={config["9"]} isHighlighted={isHighlighted} onClick={onClick} padId="9" showLabel={showLabel} step={index} />
       <SequencerStepPad isActive={config["10"]} isHighlighted={isHighlighted} onClick={onClick} padId="10" showLabel={showLabel} step={index} />
       <SequencerStepPad isActive={config["11"]} isHighlighted={isHighlighted} onClick={onClick} padId="11" showLabel={showLabel} step={index} />
       <SequencerStepPad isActive={config["12"]} isHighlighted={isHighlighted} onClick={onClick} padId="12" showLabel={showLabel} step={index} />

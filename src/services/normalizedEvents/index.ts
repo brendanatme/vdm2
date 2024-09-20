@@ -35,4 +35,6 @@ export const NormalizedEvents = {
   onMouseDown: isTouchScreen ? 'onTouchStart' : 'onMouseDown',
   onMouseMove: isTouchScreen ? 'onTouchMove' : 'onMouseMove',
   onMouseUp: isTouchScreen ? 'onTouchEnd' : 'onMouseUp',
+  onMouseEnter: isTouchScreen ? 'onTouchEnter' : 'onMouseEnter',
+  onMouseLeave: isTouchScreen ? 'onTouchLeave' : 'onMouseLeave',
 } as const
