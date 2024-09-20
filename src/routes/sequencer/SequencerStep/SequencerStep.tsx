@@ -39,6 +39,14 @@ export const SequencerStep = React.memo(function SequencerStep({
       <SequencerStepPad isActive={config["10"]} isHighlighted={isHighlighted} onClick={onClick} padId="10" showLabel={showLabel} step={index} />
       <SequencerStepPad isActive={config["11"]} isHighlighted={isHighlighted} onClick={onClick} padId="11" showLabel={showLabel} step={index} />
       <SequencerStepPad isActive={config["12"]} isHighlighted={isHighlighted} onClick={onClick} padId="12" showLabel={showLabel} step={index} />
+      <SequencerStepPad isActive={config["5"]} isHighlighted={isHighlighted} onClick={onClick} padId="5" showLabel={showLabel} step={index} />
+      <SequencerStepPad isActive={config["6"]} isHighlighted={isHighlighted} onClick={onClick} padId="6" showLabel={showLabel} step={index} />
+      <SequencerStepPad isActive={config["7"]} isHighlighted={isHighlighted} onClick={onClick} padId="7" showLabel={showLabel} step={index} />
+      <SequencerStepPad isActive={config["8"]} isHighlighted={isHighlighted} onClick={onClick} padId="8" showLabel={showLabel} step={index} />
+      <SequencerStepPad isActive={config["1"]} isHighlighted={isHighlighted} onClick={onClick} padId="1" showLabel={showLabel} step={index} />
+      <SequencerStepPad isActive={config["2"]} isHighlighted={isHighlighted} onClick={onClick} padId="2" showLabel={showLabel} step={index} />
+      <SequencerStepPad isActive={config["3"]} isHighlighted={isHighlighted} onClick={onClick} padId="3" showLabel={showLabel} step={index} />
+      <SequencerStepPad isActive={config["4"]} isHighlighted={isHighlighted} onClick={onClick} padId="4" showLabel={showLabel} step={index} />
     </div>
   )
 }, isEqual)

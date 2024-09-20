@@ -2,6 +2,7 @@
   /* --orange: #cc8444;
   --green: #4b6; */
   --ease-out: cubic-bezier(0,.57,.43,.99);
+  --ease-in-out: cubic-bezier(.42, .01, .16, .96);
   
   --black: #000;
   --gray1: #000;

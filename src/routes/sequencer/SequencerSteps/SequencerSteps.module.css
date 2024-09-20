@@ -1,0 +1,29 @@
+
+@import '../../../styles/core/media.css';
+
+.container {
+  background: var(--blue3);
+  border: 1px solid var(--gray2);
+  border-radius: 4px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+@media (--desktop) {
+  .container {
+    transform: rotate(270deg);
+  }
+}
+
+.group {
+  overflow: hidden;
+  position: relative;
+  transition: transform .6s var(--ease-in-out);
+  width: 200%;
+}
+
+.group.page1 {
+  transform: translateX(-50%);
+}

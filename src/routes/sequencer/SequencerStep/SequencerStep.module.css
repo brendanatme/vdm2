@@ -2,7 +2,7 @@
 .container {
   overflow: hidden;
   /* transition: background-color .275s; */
-  transition: background-color 0 .01s;
+  transition: background-color 0s linear 0.05s;
 }
 
 .container.highlight {

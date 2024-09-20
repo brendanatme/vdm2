@@ -1,6 +1,7 @@
 import React from 'react'
-import { _ } from '~/utils'
+import { NormalizedEvents } from '~/services/normalizedEvents'
 import uStyles from '~/styles/core/utils.module.css'
+import { _ } from '~/utils'
 import styles from './PlayButton.module.css'
 import { KeyboardEvents, useKeyHandler } from '~/hooks/useKeyHandler'
 
@@ -15,14 +16,17 @@ export function PlayButton({ isPlaying, play, stop }: PlayButtonProps) {
     callback: isPlaying ? stop : play,
     event: KeyboardEvents.KeyDown,
     key: ' ',
+    preventDefault: false,
   })
 
+  const buttonProps = {
+    className: _(uStyles.ui, uStyles.btnReset, uStyles.flex, styles.container),
+    type: 'button',
+    [NormalizedEvents.onMouseDown]: isPlaying ? stop : play,
+  } as const
+
   return (
-    <button
-      className={_(uStyles.ui, uStyles.btnReset, uStyles.flex, styles.container)}
-      onClick={isPlaying ? stop : play}
-      type="button"
-    >
+    <button {...buttonProps}>
       <div className={isPlaying ? styles.square : styles.triangle} />
     </button>
   )

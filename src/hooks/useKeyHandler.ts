@@ -6,16 +6,17 @@ export enum KeyboardEvents {
 }
 
 interface KeyHandlerProps {
-  event: KeyboardEvents,
-  key: string,
-  callback: () => void,
+  event: KeyboardEvents
+  key: string
+  callback: () => void
   condition?: boolean
+  preventDefault?: boolean
 }
 
-export function useKeyHandler({ callback, condition = true, event, key }: KeyHandlerProps) {
+export function useKeyHandler({ callback, condition = true, event, key, preventDefault = true }: KeyHandlerProps) {
   React.useEffect(() => {
     const eventHandler = (e: KeyboardEvent) => {
-      e.preventDefault()
+      preventDefault && e.preventDefault()
       if (e.key.toLowerCase() === key.toLowerCase()) {
         callback()
       }

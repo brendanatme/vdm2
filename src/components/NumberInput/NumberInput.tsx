@@ -11,7 +11,7 @@ interface NumberInputProps {
   required?: boolean
 }
 
-export function NumberInput({ large = false, name, onChange, required = false, short = false, value }: NumberInputProps) {
+export const NumberInput = React.memo(function NumberInput({ large = false, name, onChange, required = false, short = false, value }: NumberInputProps) {
   const handleChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const num = parseFloat(e.target.value)
     onChange?.(e, isNaN(num) ? undefined : num)
@@ -30,4 +30,4 @@ export function NumberInput({ large = false, name, onChange, required = false, s
       value={value}
     />
   )
-}
+})

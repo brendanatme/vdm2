@@ -1,0 +1,94 @@
+
+@import '../../styles/core/media.css';
+
+.arrowBtn {
+  border: 1px solid var(--white);
+  border-radius: 4px;
+  color: var(--white);
+  padding: .5rem 1rem;
+  transition: border-color .3s, color .3s;
+}
+.arrowBtn:hover {
+  border-color: var(--blue5);
+  color: var(--blue5);
+}
+
+.arrowBtn.isActive,
+.arrowBtn.isActive:hover {
+  background: var(--blue4);
+  color: var(--blue1);
+}
+
+.arrowBtn.isDisabled,
+.arrowBtn.isDisabled:hover {
+  border-color: var(--gray2);
+  color: var(--gray2);
+}
+
+.arrow {
+  display: block;
+  height: 0;
+  transition: border-color .3s;
+  width: 0;
+}
+
+
+.arrow.next {
+  border-top: .33rem solid transparent;
+  border-bottom: .33rem solid transparent;
+  border-left: 0.5rem solid var(--white);
+}
+.arrowBtn:hover .arrow.next {
+  border-left-color: var(--blue5);
+}
+.arrowBtn.isDisabled .arrow.next,
+.arrowBtn.isDisabled:hover .arrow.next {
+  border-left-color: var(--gray2);
+}
+@media (--desktop) {
+  .arrow.next {
+    border-top: 0 transparent;
+    border-left: .33rem solid transparent;
+    border-right: .33rem solid transparent;
+    border-bottom: 0.5rem solid var(--white);
+  }
+  .arrowBtn:hover .arrow.next {
+    border-left-color: transparent;
+    border-bottom-color: var(--blue5);
+  }
+  .arrowBtn.isDisabled .arrow.next,
+  .arrowBtn.isDisabled:hover .arrow.next {
+    border-left-color: transparent;
+    border-bottom-color: var(--gray2);
+  }
+}
+
+.arrow.prev {
+  border-top: .33rem solid transparent;
+  border-bottom: .33rem solid transparent;
+  border-right: 0.5rem solid var(--white);
+}
+.arrowBtn:hover .arrow.prev {
+  border-right-color: var(--blue5);
+}
+.arrowBtn.isDisabled .arrow.prev,
+.arrowBtn.isDisabled:hover .arrow.prev {
+  border-right-color: var(--gray2);
+}
+@media (--desktop) {
+  .arrow.prev {
+    border-bottom: 0 transparent;
+    border-left: .33rem solid transparent;
+    border-right: .33rem solid transparent;
+    border-top: 0.5rem solid var(--white);
+  }
+  .arrowBtn:hover .arrow.prev {
+    border-right-color: transparent;
+    border-top-color: var(--blue5);
+  }
+  .arrowBtn.isDisabled .arrow.prev,
+  .arrowBtn.isDisabled:hover .arrow.prev {
+    border-right-color: transparent;
+    border-top-color: var(--gray2);
+  }
+}
