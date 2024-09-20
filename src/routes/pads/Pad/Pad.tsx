@@ -32,6 +32,7 @@ export const Pad = React.memo(function Pad({ bussId, endTime, id, keyName, src, 
   const exitEditMode = React.useCallback(() => {
     modal.close()
     disableEditKitMode()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [modal.close, disableEditKitMode])
   
   /**
@@ -51,6 +52,7 @@ export const Pad = React.memo(function Pad({ bussId, endTime, id, keyName, src, 
       requestAnimationFrame(() => document.getElementById('layout')?.classList.add('animJolt'))
     }
     setTimeout(() => setIsPressed(false), 100)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [player.play])
 
   /**

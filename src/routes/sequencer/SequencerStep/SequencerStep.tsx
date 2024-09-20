@@ -22,12 +22,12 @@ export const SequencerStep = React.memo(function SequencerStep({
 }: SequencerStepProps) {
   const [isHighlighted, setIsHighlighted] = React.useState(index === 0)
 
-  const cb = (e: CustomEvent<number>) => setIsHighlighted(e.detail === index)
+  const cb = React.useCallback((e: CustomEvent<number>) => setIsHighlighted(e.detail === index), [index])
   
   React.useEffect(() => {
     subscribe<CustomEvent<number>>(eventName, cb)
     return () => unsubscribe<CustomEvent<number>>(eventName, cb)
-  }, [eventName])
+  }, [cb, eventName])
 
   return (
     <div className={_(styles.container, isHighlighted ? styles.highlight : '')}>

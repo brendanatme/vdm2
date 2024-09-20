@@ -5,7 +5,6 @@ import uStyles from '~/styles/core/utils.module.css'
 import styles from './PotInput.module.css'
 
 interface PotInputProps {
-  name?: string
   onChange?: (value: number) => void
   value: number
 }
@@ -16,7 +15,7 @@ const ratioToDeg = (r: number): number => r * 270 - 135
 
 const getClientY = getNormalizedEventProp<number>('clientY')
 
-export function PotInput({ name, onChange, value }: PotInputProps) {
+export function PotInput({ onChange, value }: PotInputProps) {
   /**
    * Internal values used to convert drag values
    * into display values.
@@ -25,6 +24,7 @@ export function PotInput({ name, onChange, value }: PotInputProps) {
   const [displayValue, setDisplayValue] = React.useState(value)
   React.useEffect(() => {
     if (displayValue !== value) setDisplayValue(value)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value])
 
   /**
@@ -47,7 +47,7 @@ export function PotInput({ name, onChange, value }: PotInputProps) {
   React.useEffect(() => {
     calculatedValueRef.current = clamp((mouseMoved / MOUSE_MOVE_RANGE) + value, 0, 1)
     setDisplayValue(calculatedValueRef.current)
-  }, [mouseMoved])
+  }, [mouseMoved, value])
 
   return (
     <div

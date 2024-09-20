@@ -19,12 +19,12 @@ export function PadSettings({ bussId, padId, volume }: PadSettingsProps) {
 
   const onVolumeChange = React.useCallback(
     (value: number) => editPad(padId, { volume: value }),
-    [padId],
+    [editPad, padId],
   )
 
   const onBussChange = React.useCallback(
     (e: React.ChangeEvent<HTMLSelectElement>) => editPad(padId, { bussId: e.target.value }),
-    [padId],
+    [editPad, padId],
   )
 
   return (

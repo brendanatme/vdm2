@@ -93,7 +93,7 @@ export function useSequencePlayer({ bpm, onStepChange, padsIndexed, steps }: Seq
       onStepChange?.(currentStep.current)
     }, bpmToMs(bpm))
     setIsPlaying(true)
-  }, [bpm, stepBussPadMap])
+  }, [bpm, stepBussPadMap, onStepChange, steps.length])
 
   const stop = React.useCallback(() => {
     clearInterval(playerIntervalId.current)
@@ -101,16 +101,11 @@ export function useSequencePlayer({ bpm, onStepChange, padsIndexed, steps }: Seq
     setIsPlaying(false)
   }, [])
 
-  const [currentStepIndex, setCurrentStepIndex] = React.useState(currentStep.current)
-  React.useEffect(() => {
-    setCurrentStepIndex(currentStep.current)
-  }, [currentStep.current])
-
   /**
    * when component UNmounts,
    * stop playing
    */
-  React.useEffect(() => stop, [])
+  React.useEffect(() => stop)
 
   /**
    * when padsIndexed are loaded,
@@ -129,6 +124,5 @@ export function useSequencePlayer({ bpm, onStepChange, padsIndexed, steps }: Seq
     isPlaying,
     play,
     stop,
-    updateStep: currentStepIndex,
   }
 }

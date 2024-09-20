@@ -15,7 +15,8 @@ export const NumberInput = React.memo(function NumberInput({ large = false, name
   const handleChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const num = parseFloat(e.target.value)
     onChange?.(e, isNaN(num) ? undefined : num)
-  }, [])
+  }, [onChange])
+  
   return (
     <input
       className={_(

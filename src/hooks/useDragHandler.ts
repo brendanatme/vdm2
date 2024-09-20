@@ -15,13 +15,13 @@ export function useDragHandler({ onDrag, onDragEnd, onDragStart }: UseDragHandle
   const startDrag = React.useCallback((e: React.MouseEvent | React.TouchEvent) => {
     isDragging.current = true
     onDragStart?.(e)
-  }, [])
+  }, [onDragStart])
   
   React.useEffect(() => {
     const drag = (e: MouseEvent | TouchEvent) => isDragging.current && onDrag?.(e)
     window.addEventListener(NormalizedEvents.mousemove, drag)
     return () => window.removeEventListener(NormalizedEvents.mousemove, drag)
-  }, [onDrag, isDragging.current])
+  }, [onDrag])
 
   React.useEffect(() => {
     const endDrag = (e: MouseEvent | TouchEvent) => {
@@ -30,7 +30,7 @@ export function useDragHandler({ onDrag, onDragEnd, onDragStart }: UseDragHandle
     }
     window.addEventListener(NormalizedEvents.mouseup, endDrag)
     return () => window.removeEventListener(NormalizedEvents.mouseup, endDrag)
-  }, [onDrag, isDragging.current])
+  }, [onDragEnd])
   
   return {
     [NormalizedEvents.onMouseDown]: startDrag,

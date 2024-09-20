@@ -47,7 +47,7 @@ export function Modal({ children = null, close, heading, id, isOpen }: ModalProp
 
   React.useEffect(() => {
     setAModalIsOpen(isOpen)
-  }, [isOpen])
+  }, [setAModalIsOpen, isOpen])
 
   useKeyHandler({
     callback: close,

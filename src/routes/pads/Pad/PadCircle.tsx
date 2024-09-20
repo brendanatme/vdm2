@@ -9,7 +9,7 @@ import uStyles from '~/styles/core/utils.module.css'
  * triggered imperatively,
  * as animations are better imperative over declarative.
  */
-export const PadCircle = React.forwardRef(function PadCircle({}, ref) {
+export const PadCircle = React.forwardRef(function PadCircle(_, ref) {
   const elRef = React.useRef(null)
   const animRef = React.useRef<typeof moJs.Shape>(null)
 

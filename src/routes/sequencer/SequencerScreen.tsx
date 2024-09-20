@@ -43,11 +43,7 @@ export function SequencerScreen() {
             <div className={_(uStyles.flex)}>
               <BpmInput large short />
               <span>&nbsp;</span>
-              <PlayButton
-                isPlaying={sequencePlayer.isPlaying}
-                play={sequencePlayer.play}
-                stop={sequencePlayer.stop}
-              />
+              <PlayButton {...sequencePlayer} />
             </div>
           </div>
         </div>

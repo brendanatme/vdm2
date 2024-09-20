@@ -21,7 +21,7 @@ export function SaveKitForm({ onSuccess }: SaveKitFormProps) {
       saveKit(formProps.name as string)
       onSuccess?.()
     }
-  }, [])
+  }, [saveKit, onSuccess])
 
   return (
     <form id="SaveKitForm" onSubmit={handleSubmit}>

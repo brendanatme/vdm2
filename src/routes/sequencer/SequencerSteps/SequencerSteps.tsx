@@ -14,7 +14,7 @@ interface SequencerStepsProps {
 export function SequencerSteps({ eventName, steps }: SequencerStepsProps) {
   const updateStep = State.useState(State.select.sequencer.updateStep)
 
-  const updateStepPad = React.useCallback(updateStep, [])
+  const updateStepPad = React.useCallback(updateStep, [updateStep])
 
   /**
    * sequencer step pages
