@@ -105,7 +105,8 @@ export function useSequencePlayer({ bpm, onStepChange, padsIndexed, steps }: Seq
    * when component UNmounts,
    * stop playing
    */
-  React.useEffect(() => stop)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  React.useEffect(() => stop, [])
 
   /**
    * when padsIndexed are loaded,

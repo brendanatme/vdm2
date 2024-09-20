@@ -11,7 +11,10 @@ export const BpmInput = React.memo(function BpmInput({ large = false, short = fa
   const bpm = State.useState(State.select.sequencer.bpm)
   const updateBpm = State.useState(State.select.sequencer.updateBpm)
   
-  const handleBpmChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement>, n?: number) => updateBpm(n), [])
+  const handleBpmChange = React.useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>, n?: number) => updateBpm(n),
+    [updateBpm],
+  )
 
   return (
     <React.Fragment>

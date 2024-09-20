@@ -29,5 +29,5 @@ export function useKeyHandler({ callback, condition = true, event, key, preventD
         window.removeEventListener(event, eventHandler, true) 
       }
     }
-  }, [callback, condition, event, key])
+  }, [callback, condition, event, key, preventDefault])
 }

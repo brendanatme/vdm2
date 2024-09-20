@@ -12,7 +12,7 @@ import styles from './SequencerScreen.module.css'
 import { KitSwitcher } from '../pads/KitControls/KitSwitcher'
 
 
-const EVENT_NAME = 'sequencerStepChanged'
+const STEP_CHANGED = 'sequencerStepChanged'
 
 export function SequencerScreen() {
   /**
@@ -21,7 +21,7 @@ export function SequencerScreen() {
   const bpm = State.useState(State.select.sequencer.bpm)
   const padsIndexed = State.useState(useShallow(State.select.kits.selectedKitPadsIndexed))
   const steps = State.useState(State.select.sequencer.steps)
-  const emitStepChangeEvent = React.useCallback((stepIndex: number) => publish<number>(EVENT_NAME, stepIndex), [])
+  const emitStepChangeEvent = React.useCallback((stepIndex: number) => publish<number>(STEP_CHANGED, stepIndex), [])
   const sequencePlayer = useSequencePlayer({
     bpm: !bpm ? 120 : bpm,
     onStepChange: emitStepChangeEvent,
@@ -32,7 +32,7 @@ export function SequencerScreen() {
   return (
     <div className={_(uStyles.flex, uStyles.column, uStyles.rel)}>
       <div className={styles.body}>
-        <SequencerSteps eventName={EVENT_NAME} steps={steps} />
+        <SequencerSteps stepChangedEventName={STEP_CHANGED} steps={steps} />
       </div>
       <div className={styles.footer}>
         <div className={_(uStyles.pageWidth, uStyles.narrow)}>

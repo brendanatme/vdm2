@@ -1,8 +1,8 @@
-export function subscribe<T>(eventName: string, listener: (e: T) => void) {
+export function subscribe<T>(eventName: string, listener: (e: CustomEvent<T>) => void) {
   (document as any).addEventListener(eventName, listener)
 }
 
-export function unsubscribe<T>(eventName: string, listener: (e: T) => void) {
+export function unsubscribe<T>(eventName: string, listener: (e: CustomEvent<T>) => void) {
   (document as any).removeEventListener(eventName, listener)
 }
 
