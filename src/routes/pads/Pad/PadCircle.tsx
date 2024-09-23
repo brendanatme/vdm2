@@ -14,7 +14,7 @@ export const PadCircle = React.forwardRef(function PadCircle(_, ref) {
   const animRef = React.useRef<typeof moJs.Shape>(null)
 
   React.useEffect(() => {
-    // Prevent multiple instansiations on hot reloads
+    // Prevent multiple instantiations on hot reloads
     if (animRef.current) return
 
     // Assign a Shape animation to a ref
@@ -31,7 +31,7 @@ export const PadCircle = React.forwardRef(function PadCircle(_, ref) {
       repeat: 0,
       isShowEnd: false
     })
-  })
+  }, [])
 
   React.useImperativeHandle(ref, () => ({
     play() {

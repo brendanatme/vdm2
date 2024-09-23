@@ -58,7 +58,7 @@ export function usePlayer({
    */
   React.useEffect(() => {
     const rate = semitoneToRate(tuning)
-    console.debug({ tuning, rate })
+    // console.debug({ where: 'usePlayer', tuning, rate })
     busses[bussId].add({ endTime, padId, rate, src, startTime, volume })
     return () => busses[bussId].remove(padId)
   }, [bussId, endTime, padId, src, startTime, tuning, volume])

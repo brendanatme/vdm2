@@ -23,7 +23,12 @@ const ratioToDeg = (r: number, min: number, max: number): number => {
 const getClientY = getNormalizedEventProp<number>('clientY')
 
 export function PotInput({ min, max, onChange, sensitivity = 140, value }: PotInputProps) {
-  const MOUSE_MOVE_RANGE = React.useMemo(() => (max - min) * sensitivity, [min, max, sensitivity])
+  /**
+   * Determines how far user must move pointer to turn pot.
+   * 
+   * A higher minMax range and/or higher sensitivity = less mouse movement required.
+   */
+  const mouseMoveRange = React.useMemo(() => (max - min) * sensitivity, [min, max, sensitivity])
 
   /**
    * Internal values used to convert drag values
@@ -39,32 +44,20 @@ export function PotInput({ min, max, onChange, sensitivity = 140, value }: PotIn
   /**
    * Drag handlers and computations
    */
+  const onDrag = React.useCallback((e: MouseEvent | TouchEvent) => {
+    const mouseMoved = mouseStart.current - getClientY(e)
+    calculatedValueRef.current = clamp((mouseMoved / mouseMoveRange) + value, min, max)
+    setDisplayValue(calculatedValueRef.current)
+  }, [mouseMoveRange, value, min, max])
+
   const mouseStart = React.useRef<number>(0)
-  const [mouseMoved, setMouseMoved] = React.useState<number>(0)
   const dragHandler = useDragHandler({
     onDragStart: (e) => {
       mouseStart.current = getClientY(e)
     },
-    onDrag: (e) => {
-      setMouseMoved(mouseStart.current - getClientY(e))
-    },
-    onDragEnd: (e) => {
-      onChange?.(Math.round(calculatedValueRef.current * 100) / 100)
-    },
+    onDrag,
+    onDragEnd: (e) => onChange?.(calculatedValueRef.current),
   })
-
-  React.useEffect(() => {
-    // console.debug({
-    //   mouseMoved,
-    //   MOUSE_MOVE_RANGE,
-    //   value,
-    //   min,
-    //   max,
-    // })
-    // console.debug('calculatedValueRef.current', calculatedValueRef.current)
-    calculatedValueRef.current = clamp((mouseMoved / MOUSE_MOVE_RANGE) + value, min, max)
-    setDisplayValue(calculatedValueRef.current)
-  }, [MOUSE_MOVE_RANGE, mouseMoved, value, min, max])
 
   return (
     <div

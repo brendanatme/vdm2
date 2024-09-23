@@ -20,7 +20,10 @@ export function PadSettings({ bussId, padId, tuning, volume }: PadSettingsProps)
   const bussIds = State.useState(State.select.pads.padIds)
 
   const onVolumeChange = React.useCallback(
-    (value: number) => editPad(padId, { volume: value }),
+    (value: number) => {
+      console.debug('volume change', value)
+      editPad(padId, { volume: value })
+    },
     [editPad, padId],
   )
 
@@ -30,7 +33,10 @@ export function PadSettings({ bussId, padId, tuning, volume }: PadSettingsProps)
   )
 
   const onTuningChange = React.useCallback(
-    (value: number) => editPad(padId, { tuning: value }),
+    (value: number) => {
+      console.debug('tuning change', value)
+      editPad(padId, { tuning: value })
+    },
     [editPad, padId],
   )
 
