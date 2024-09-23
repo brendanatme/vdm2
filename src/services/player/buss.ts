@@ -37,12 +37,14 @@ export class Buss {
   add({
     endTime,
     padId,
+    rate,
     src,
     startTime,
     volume,
   }: {
     endTime: number,
     padId: string,
+    rate: number,
     src?: string,
     startTime: number,
     volume: number,
@@ -51,7 +53,7 @@ export class Buss {
       return
     }
     
-    this.sounds[padId] = new Howl({ src, volume, sprite: {
+    this.sounds[padId] = new Howl({ src, rate, volume, sprite: {
       clip: [startTime, endTime],
     }})
   }

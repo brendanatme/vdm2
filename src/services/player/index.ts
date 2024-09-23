@@ -1,11 +1,12 @@
 import React from 'react'
 import { KitPad, SequencerStepConfig } from '~/state'
+import mnjs from '~/vendor/mnjs'
 import { Buss } from './buss'
 
 const busses: Record<string, Buss> = {
   '1': new Buss(),
   '2': new Buss(),
-  '3': new Buss(),
+  '3': new Buss(), 
   '4': new Buss(),
   '5': new Buss(),
   '6': new Buss(),
@@ -21,12 +22,25 @@ const busses: Record<string, Buss> = {
   '16': new Buss(),
 }
 
+/**
+ * semitoneToRate
+ * 
+ * Pad.tuning is in semitones, values -6 through 6.
+ * Calculate pitch shift from semitones.
+ */
+const semitoneToRate = (semitones: number) => {
+  const semitonesInt = mnjs.round(semitones)
+  const semitoneRatio = mnjs.divi(semitonesInt, 12)
+  return mnjs.pow(2, semitoneRatio)
+}
+
 export function usePlayer({
   bussId,
   endTime,
   padId,
   src,
   startTime,
+  tuning,
   volume,
 }: {
   bussId: string,
@@ -34,6 +48,7 @@ export function usePlayer({
   padId: string,
   src: string,
   startTime: number,
+  tuning: number,
   volume: number,
 }) {
   /**
@@ -42,9 +57,11 @@ export function usePlayer({
    * remove prev src from buss
    */
   React.useEffect(() => {
-    busses[bussId].add({ endTime, padId, src, startTime, volume })
+    const rate = semitoneToRate(tuning)
+    console.debug({ tuning, rate })
+    busses[bussId].add({ endTime, padId, rate, src, startTime, volume })
     return () => busses[bussId].remove(padId)
-  }, [bussId, endTime, padId, src, startTime, volume])
+  }, [bussId, endTime, padId, src, startTime, tuning, volume])
 
   return {
     play: () => busses[bussId].play(padId),
@@ -114,7 +131,7 @@ export function useSequencePlayer({ bpm, onStepChange, padsIndexed, steps }: Seq
    */
   React.useEffect(() => {
     Object.values(padsIndexed).forEach(
-      ({ id, ...pad }) => busses[pad.bussId].add({ padId: id, ...pad }),
+      ({ id, tuning, ...pad }) => busses[pad.bussId].add({ padId: id, rate: semitoneToRate(tuning), ...pad }),
     )
     return () => Object.values(padsIndexed).forEach(
       (pad) => busses[pad.bussId].remove(pad.id),

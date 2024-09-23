@@ -18,10 +18,11 @@ interface PadProps {
   keyName: string
   src: string
   startTime: number
+  tuning: number
   volume: number
 }
 
-export const Pad = React.memo(function Pad({ bussId, endTime, id, keyName, src, startTime, volume }: PadProps) {
+export const Pad = React.memo(function Pad({ bussId, endTime, id, keyName, src, startTime, tuning, volume }: PadProps) {
   /**
    * Control the Modal
    * for editing pad settings.
@@ -42,7 +43,7 @@ export const Pad = React.memo(function Pad({ bussId, endTime, id, keyName, src, 
   */
   const [isPressed, setIsPressed] = React.useState(false)
   const padCircleRef = React.useRef<{ play: () => void }>(null)
-  const player = usePlayer({ bussId, endTime, padId: id, src, startTime, volume })
+  const player = usePlayer({ bussId, endTime, padId: id, src, startTime, tuning, volume })
   const onPlay = React.useCallback(() => {
     player.play()
     padCircleRef.current?.play()
@@ -99,7 +100,7 @@ export const Pad = React.memo(function Pad({ bussId, endTime, id, keyName, src, 
           heading={`EDIT PAD (${keyName})`}
           id={`edit-pad-modal-${id}`}
         >
-          <PadSettings bussId={bussId} padId={id} volume={volume} />
+          <PadSettings bussId={bussId} padId={id} tuning={tuning} volume={volume} />
         </Modal>
       </Square>
     </div>

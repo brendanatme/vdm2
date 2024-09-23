@@ -4,6 +4,7 @@ export interface KitPad {
   id: string
   src: string
   startTime: number
+  tuning: number
   volume: number
 }
 
