@@ -268,5 +268,140 @@
         "volume": 0.6
       }
     ]
+  },
+  {
+    "id": "__DEFAULT_3__",
+    "name": "Bass",
+    "type": "default",
+    "pads": [
+      {
+        "bussId": "1",
+        "endTime": 9999,
+        "id": "1",
+        "src": "/assets/audio/basses/bsgiga_hard.wav",
+        "startTime": 0,
+        "volume": 0.7
+      },
+      {
+        "bussId": "2",
+        "endTime": 9999,
+        "id": "2",
+        "src": "/assets/audio/basses/bsgiga_mini.wav",
+        "startTime": 0,
+        "volume": 0.7
+      },
+      {
+        "bussId": "3",
+        "endTime": 9999,
+        "id": "3",
+        "src": "/assets/audio/basses/bsgiga_mini11.wav",
+        "startTime": 0,
+        "volume": 0.7
+      },
+      {
+        "bussId": "4",
+        "endTime": 9999,
+        "id": "4",
+        "src": "/assets/audio/basses/bsgiga_tx802_11.wav",
+        "startTime": 0,
+        "volume": 0.7
+      },
+      {
+        "bussId": "5",
+        "endTime": 9999,
+        "id": "5",
+        "src": "/assets/audio/basses/bsgigapack_pluck.wav",
+        "startTime": 0,
+        "volume": 0.7
+      },
+      {
+        "bussId": "6",
+        "endTime": 125,
+        "id": "6",
+        "src": "/assets/audio/basses/spacesynths_acid.wav",
+        "startTime": 0,
+        "volume": 0.7
+      },
+      {
+        "bussId": "7",
+        "endTime": 9999,
+        "id": "7",
+        "src": "/assets/audio/basses/bsgiga_house.wav",
+        "startTime": 0,
+        "volume": 0.7
+      },
+      {
+        "bussId": "8",
+        "endTime": 9999,
+        "id": "8",
+        "src": "/assets/audio/basses/bsgiga_90s.wav",
+        "startTime": 0,
+        "volume": 0.7
+      },
+      {
+        "bussId": "9",
+        "endTime": 9999,
+        "id": "9",
+        "src": "/assets/audio/basses/bsgiga_ban9.wav",
+        "startTime": 0,
+        "volume": 0.7
+      },
+      {
+        "bussId": "10",
+        "endTime": 9999,
+        "id": "10",
+        "src": "/assets/audio/basses/bsgiga_gold_c2.wav",
+        "startTime": 0,
+        "volume": 0.7
+      },
+      {
+        "bussId": "11",
+        "endTime": 9999,
+        "id": "11",
+        "src": "/assets/audio/basses/bsgiga_jubs1.wav",
+        "startTime": 0,
+        "volume": 0.7
+      },
+      {
+        "bussId": "12",
+        "endTime": 9999,
+        "id": "12",
+        "src": "/assets/audio/basses/bsgiga_mini.wav",
+        "startTime": 0,
+        "volume": 0.7
+      },
+      {
+        "bussId": "13",
+        "endTime": 9999,
+        "id": "13",
+        "src": "/assets/audio/basses/boombapbox_slap.wav",
+        "startTime": 0,
+        "volume": 0.7
+      },
+      {
+        "bussId": "14",
+        "endTime": 9999,
+        "id": "14",
+        "src": "/assets/audio/basses/boombapbox_electric.wav",
+        "startTime": 0,
+        "volume": 0.7
+      },
+      {
+        "bussId": "15",
+        "endTime": 9999,
+        "id": "15",
+        "src": "/assets/audio/basses/boombapbox_sine.wav",
+        "startTime": 0,
+        "volume": 0.7
+      },
+      {
+        "bussId": "15",
+        "endTime": 9999,
+        "id": "16",
+        "src": "/assets/audio/basses/boombapbox_double.wav",
+        "startTime": 0,
+        "volume": 0.7
+      }
+    ]
   }
 ]
