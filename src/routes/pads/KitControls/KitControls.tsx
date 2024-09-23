@@ -1,11 +1,11 @@
 import React from 'react'
 import { useShallow } from 'zustand/react/shallow'
 import { Button } from '~/components/Button'
+import { KitSwitcher } from '~/components/KitSwitcher'
 import { State } from '~/state'
-import { _ } from '~/utils'
 import uStyles from '~/styles/core/utils.module.css'
+import { _ } from '~/utils'
 import styles from './KitControls.module.css'
-import { KitSwitcher } from './KitSwitcher'
 import { SaveKitButton } from './SaveKitButton'
 
 export function KitControls() {

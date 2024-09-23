@@ -3,6 +3,9 @@
   --green: #4b6; */
   --ease-out: cubic-bezier(0,.57,.43,.99);
   --ease-in-out: cubic-bezier(.42, .01, .16, .96);
+
+  --bg-url: ""; /* url('/public/assets/bg.jpg') */
+  --bg-opacity: 0;
   
   --black: #000;
   --gray1: #383845;
@@ -16,6 +19,7 @@
   --blue1: #191921;
   --blue2: #202029;
   --blue3: #24242f;
+  --blue3-5: #2d2d3d;
   --blue4: #46c;
   --blue5: #4b72ea;
 

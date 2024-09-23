@@ -34,7 +34,6 @@ body,
 body {
   background: var(--blue2);
   color: var(--white);
-  
 }
 
 a {
@@ -52,6 +51,10 @@ label {
   font-size: 0.8rem;
   font-weight: 500;
   text-transform: uppercase;
+}
+
+img {
+  display: block;
 }
 
 @keyframes jolt {

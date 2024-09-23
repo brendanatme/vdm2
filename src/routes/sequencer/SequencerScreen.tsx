@@ -1,5 +1,6 @@
 import React from 'react'
 import { useShallow } from 'zustand/react/shallow'
+import { KitSwitcher } from '~/components/KitSwitcher'
 import { useSequencePlayer } from '~/services/player'
 import { publish } from '~/services/pubSub'
 import { State } from '~/state'
@@ -9,7 +10,6 @@ import { BpmInput } from './BpmInput'
 import { PlayButton } from './PlayButton'
 import { SequencerSteps } from './SequencerSteps'
 import styles from './SequencerScreen.module.css'
-import { KitSwitcher } from '../pads/KitControls/KitSwitcher'
 
 
 const STEP_CHANGED = 'sequencerStepChanged'

@@ -1,7 +1,6 @@
 /*
   app
 */
-@import 'styles/core/variables';
 @import 'styles/core/media';
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200..900&display=swap');
@@ -12,6 +11,13 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
+}
+
+.bg {
+  background-position:  center center;
+  background-image: var(--bg-url);
+  background-size: cover;
+  opacity: var(--bg-opacity);
 }
 
 .header {
@@ -33,10 +39,21 @@
   nav
 */
 
-.logo {
-  font-size: 2rem;
+.heading {
   margin: 0 .75rem 0 0;
 }
+.logo {
+  height: 24px;
+  width: 72px;
+  opacity: 0.8;
+}
+@media (--desktop) {
+  .logo {
+    height: 30px;
+    width: 90px;
+  }
+}
+
 
 .nav {
   align-items: center;
