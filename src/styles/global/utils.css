@@ -1,8 +1,3 @@
-
-.fullWidth {
-  width: 100%;
-}
-
 .fill {
   height: 100%;
   left: 0;
@@ -39,26 +34,8 @@
   justify-content: space-between;
 }
 
-.flex.start {
-  justify-content: flex-start;
-}
-
-.flex.end {
-  justify-content: flex-end;
-}
-
-.basisThird {
-  flex-basis: 33.3%;
-  flex-shrink: 0;
-}
-
 .rel {
   position: relative;
-}
-
-.ib {
-  display: inline-block;
-  vertical-align: middle;
 }
 
 .center {
@@ -130,10 +107,6 @@
 .ui {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-}
-
-.hidden {
-  display: none;
 }
 
 .btnReset {

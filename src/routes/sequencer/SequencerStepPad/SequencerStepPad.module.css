@@ -10,6 +10,7 @@
 .stepPadSquare {
   border: 1px solid var(--gray1);
   box-sizing: border-box;
+  position: relative;
   transition: background-color .4s;
   width: 100%;
 }
@@ -40,12 +41,32 @@
   border-color: var(--white);
 }
 
+.stepPadSquare:before {
+  background: linear-gradient(to top, #000, #ff0000);
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .stepPadSquare.isActive {
   background-color: var(--purple1);
   transition: background-color 0 .01s;
   /* transition: background-color .275s; */
 }
 
+.stepPadSquare.isActive:before {
+  opacity: 0.05;
+}
+
 .stepPadSquare.isActive.isHighlighted {
   background-color: var(--red1);
+}
+
+.stepPadSquare.isActive.isHighlighted:before {
+  opacity: 0.1;
 }

@@ -39,8 +39,6 @@ const todos = [
   '• HYPE_MODE option',
   '• server (deep-linking support)',
   '• use pointer events',
-  '• prune css utils',
-  '• try subtle gradients on sequencer pads',
 ]
 todos.forEach((todo) => console.log(todo))
 
