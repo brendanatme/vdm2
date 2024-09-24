@@ -8,6 +8,7 @@ interface ArrowButtonProps {
   isDisabled?: boolean
   next?: boolean
   onClick?: (e?: React.MouseEvent) => void
+  point?: 'left' | 'right' | 'up' | 'down'
   prev?: boolean
   type?: 'button' | 'submit'
 }
@@ -17,6 +18,7 @@ export function ArrowButton({
   isDisabled = false,
   next = false,
   onClick,
+  point = 'right',
   prev = false,
 }: ArrowButtonProps) {
   const buttonProps = {
@@ -33,13 +35,7 @@ export function ArrowButton({
 
   return (
     <button {...buttonProps}>
-      <span
-        className={_(
-          styles.arrow,
-          next ? styles.next : '',
-          prev ? styles.prev : '',
-        )}
-      />
+      <span className={_(styles.arrow, styles[point])} />
     </button>
   )
 }

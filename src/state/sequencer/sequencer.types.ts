@@ -28,6 +28,7 @@ export interface SequencerStepConfig {
 
 export interface SequencerState {
   // state
+  sequencerBars: number
   sequencerBpm: number | undefined
   sequencerSteps: SequencerStepConfig[]
 

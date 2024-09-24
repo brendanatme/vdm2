@@ -23,3 +23,12 @@ export const splice = <T>(arr: T[], index: number, insert: T, replaceLength = 1)
   copy.splice(index, replaceLength, insert)
   return [...copy]
 }
+
+export const iterate = (times: number): number[] => {
+  let arr = []
+  let n = times
+  while (n > 0) {
+    arr.push(--n)
+  }
+  return arr.reverse()
+}

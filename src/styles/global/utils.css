@@ -64,20 +64,6 @@
   vertical-align: middle;
 }
 
-.ratioSquare {
-  height: 0;
-  padding-top: 100%;
-  position: relative;
-  width: 100%;
-}
-
-.ratioThreeQuarters {
-  height: 0;
-  padding-top: 75%;
-  position: relative;
-  width: 100%;
-}
-
 .clearfix:after {
   clear: both;
   content: '';

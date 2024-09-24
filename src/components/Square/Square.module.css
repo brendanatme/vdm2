@@ -1,0 +1,19 @@
+
+.ratio {
+  height: 0;
+  position: relative;
+  width: 100%;
+}
+
+.ratio.square {
+  padding-top: 100%;
+}
+
+.ratio.threeQuarters {
+  padding-top: 75%;
+}
+
+.ratio.oneFifty {
+  /* @todo: fix this border hack */
+  padding-top: calc(150% + 32px);
+}

@@ -26,14 +26,22 @@
 .stepPad.step0 .stepPadSquare,
 .stepPad.step4 .stepPadSquare,
 .stepPad.step8 .stepPadSquare,
-.stepPad.step12 .stepPadSquare {
+.stepPad.step12 .stepPadSquare,
+.stepPad.step16 .stepPadSquare,
+.stepPad.step20 .stepPadSquare,
+.stepPad.step24 .stepPadSquare,
+.stepPad.step28 .stepPadSquare {
   border-top-color: var(--gray1-5);
 }
 
 .stepPad.step3 .stepPadSquare,
 .stepPad.step7 .stepPadSquare,
 .stepPad.step11 .stepPadSquare,
-.stepPad.step15 .stepPadSquare {
+.stepPad.step15 .stepPadSquare,
+.stepPad.step19 .stepPadSquare,
+.stepPad.step23 .stepPadSquare,
+.stepPad.step27 .stepPadSquare,
+.stepPad.step31 .stepPadSquare {
   border-bottom-color: var(--gray1-5);
 }
 

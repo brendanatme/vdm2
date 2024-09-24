@@ -25,12 +25,18 @@
   width: 200%;
 }
 
-.group.page1 {
+.group.stepPage0.padPage1 {
   transform: translateX(-50%);
 }
 
+.group.stepPage1.padPage1 {
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.group.stepPage1.padPage0 {
+  transform: translateY(-50%);
+}
+
 .controls {
-  display: flex;
-  justify-content: flex-end;
   padding: .5rem 0;
 }

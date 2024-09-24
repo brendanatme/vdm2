@@ -90,6 +90,7 @@ export const Pad = React.memo(function Pad({
       isPressed ? styles.isPressed : '',
       editKitMode ? styles.editMode : '',
     ),
+    flexFill: true,
     [NormalizedEvents.onMouseDown]: !editKitMode
       ? onPlay
       : undefined,

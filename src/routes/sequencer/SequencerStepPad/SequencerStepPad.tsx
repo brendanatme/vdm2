@@ -84,7 +84,8 @@ export const SequencerStepPad = React.memo(function SequencerStepPad({
           isActive ? styles.isActive : '',
           isHighlighted ? styles.isHighlighted : ''
         )}
-        ratioClass="ratioThreeQuarters"
+        flexFill
+        ratio="threeQuarters"
       >
         {showLabel ? keyName : ''}
       </Square>
