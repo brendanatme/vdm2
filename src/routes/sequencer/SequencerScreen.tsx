@@ -17,11 +17,13 @@ export function SequencerScreen() {
   /**
    * sequence player
    */
+  const activeBars = State.useState(State.select.sequencer.activeBars)
   const bpm = State.useState(State.select.sequencer.bpm)
   const padsIndexed = State.useState(useShallow(State.select.kits.selectedKitPadsIndexed))
   const steps = State.useState(State.select.sequencer.steps)
   const emitStepChangeEvent = React.useCallback((stepIndex: number) => publish<number>(STEP_CHANGED, stepIndex), [])
   const sequencePlayer = useSequencePlayer({
+    activeBars,
     bpm: !bpm ? 120 : bpm,
     onStepChange: emitStepChangeEvent,
     padsIndexed,

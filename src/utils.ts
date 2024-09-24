@@ -24,7 +24,7 @@ export const splice = <T>(arr: T[], index: number, insert: T, replaceLength = 1)
   return [...copy]
 }
 
-export const iterate = (times: number): number[] => {
+export const createArrayFromLength = (times: number): number[] => {
   let arr = []
   let n = times
   while (n > 0) {

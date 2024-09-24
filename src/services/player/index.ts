@@ -69,6 +69,7 @@ export function usePlayer({
 }
 
 export interface SequencePlayerProps {
+  activeBars: number
   bpm: number
   onStepChange?: (stepIndex: number) => void
   padsIndexed: Record<string, KitPad>
@@ -78,7 +79,7 @@ export interface SequencePlayerProps {
 //  ms per minute / bpm / sixteenth notes per beat
 const bpmToMs = (bpm: number) => 60000 / bpm / 4
 
-export function useSequencePlayer({ bpm, onStepChange, padsIndexed, steps }: SequencePlayerProps) {
+export function useSequencePlayer({ activeBars, bpm, onStepChange, padsIndexed, steps }: SequencePlayerProps) {
   const playerIntervalId = React.useRef<NodeJS.Timer>()
   const currentStep = React.useRef<number>(0)
   const [isPlaying, setIsPlaying] = React.useState(false)
@@ -104,13 +105,13 @@ export function useSequencePlayer({ bpm, onStepChange, padsIndexed, steps }: Seq
       stepBussPadMap[currentStep.current].forEach(
         (bussPad) => busses[bussPad.bussId].play(bussPad.padId)
       )
-      currentStep.current = currentStep.current === steps.length - 1
+      currentStep.current = currentStep.current === activeBars * 16 - 1
         ? 0
         : currentStep.current + 1
       onStepChange?.(currentStep.current)
     }, bpmToMs(bpm))
     setIsPlaying(true)
-  }, [bpm, stepBussPadMap, onStepChange, steps.length])
+  }, [activeBars, bpm, stepBussPadMap, onStepChange])
 
   const stop = React.useCallback(() => {
     clearInterval(playerIntervalId.current)
