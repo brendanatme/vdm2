@@ -32,9 +32,7 @@ if (process.env.NODE_ENV !== 'production') {
     'font-size: 16px',
   ].join(';'))
   const todos = [
-    '• V favicon',
     '• Link/font styles',
-    '• PadSettings: trim start and end',
     '• Sequencer: 2nd bar',
     '• Sequencer: save/load sequence',
     '• HYPE_MODE option',
