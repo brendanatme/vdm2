@@ -15,6 +15,8 @@ export const kitSelectors = {
   hasEdits: (state: StoreState) => !!Object.keys(state.kitPadEdits).length,
   userKits: (state: StoreState) => mapAndSortKits(state.kits).filter(userKitTypeFilter),
   defaultKits: (state: StoreState) => mapAndSortKits(state.kits).filter(defaultKitTypeFilter),
+  kitSounds: (kitId?: string) => (state: StoreState) =>
+    !kitId ? [] : state.kits[kitId]?.pads.map((pad) => pad.src) ?? [],
   
   // actions
   selectKitById: (state: StoreState) => state.selectKitById,

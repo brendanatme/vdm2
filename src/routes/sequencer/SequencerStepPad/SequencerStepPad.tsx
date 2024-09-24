@@ -4,7 +4,6 @@ import { getNormalizedEventProp } from '~/services/normalizedEvents'
 import { subscribe, unsubscribe } from '~/services/pubSub'
 import { SequencerStepConfig, State } from '~/state'
 import { _ } from '~/utils'
-import uStyles from '~/styles/core/utils.module.css'
 import styles from './SequencerStepPad.module.css'
 
 interface SequencerStepPadProps {
@@ -76,7 +75,7 @@ export const SequencerStepPad = React.memo(function SequencerStepPad({
 
   return (
     <div
-      className={_(uStyles.ui, styles.stepPad, styles[`step${step}`])}
+      className={_('ui', styles.stepPad, styles[`step${step}`])}
       ref={domEl}
     >
       <Square

@@ -1,6 +1,5 @@
 import React from 'react'
 import { _ } from '~/utils'
-import uStyles from '~/styles/core/utils.module.css'
 import styles from './Button.module.css'
 import { NormalizedEvents } from '~/services/normalizedEvents'
 
@@ -14,8 +13,8 @@ interface ButtonProps {
 export function Button({ isActive, label, onClick, type = 'button' }: ButtonProps) {
   const buttonProps = {
     className: _(
-      uStyles.btnReset,
-      uStyles.ui,
+      'btnReset',
+      'ui',
       styles.btn,
       isActive ? styles.isActive : '',
     ),

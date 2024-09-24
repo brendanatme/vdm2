@@ -9,3 +9,7 @@
   height: calc(60px + 1rem);
   justify-content: center;
 }
+
+.input.noFlex { 
+  display: block;
+}

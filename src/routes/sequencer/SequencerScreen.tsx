@@ -4,7 +4,6 @@ import { KitSwitcher } from '~/components/KitSwitcher'
 import { useSequencePlayer } from '~/services/player'
 import { publish } from '~/services/pubSub'
 import { State } from '~/state'
-import uStyles from '~/styles/core/utils.module.css'
 import { _ } from '~/utils'
 import { BpmInput } from './BpmInput'
 import { PlayButton } from './PlayButton'
@@ -30,17 +29,17 @@ export function SequencerScreen() {
   })
 
   return (
-    <div className={_(uStyles.flex, uStyles.column, uStyles.rel)}>
+    <div className={_('flex', 'column', 'rel')}>
       <div className={styles.body}>
         <SequencerSteps stepChangedEventName={STEP_CHANGED} steps={steps} />
       </div>
       <div className={styles.footer}>
-        <div className={_(uStyles.pageWidth, uStyles.narrow)}>
-          <div className={_(uStyles.flex, uStyles.fullWidth, uStyles.between)}>
-            <div className={_(uStyles.flex)}>
+        <div className={_('pageWidth', 'narrow')}>
+          <div className={_('flex', 'fullWidth', 'between')}>
+            <div className={_('flex')}>
               <KitSwitcher />
             </div>
-            <div className={_(uStyles.flex)}>
+            <div className={_('flex')}>
               <BpmInput large short />
               <span>&nbsp;</span>
               <PlayButton {...sequencePlayer} />

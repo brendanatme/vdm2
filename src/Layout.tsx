@@ -1,6 +1,5 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import uStyles from '~/styles/core/utils.module.css'
 import { _ } from '~/utils'
 import styles from './Layout.module.css'
 
@@ -15,7 +14,7 @@ export function Layout({ children }: LayoutProps) {
   
   return (
     <div id="layout" className={styles.layout}>
-      <div className={_(uStyles.fill, styles.bg)} />
+      <div className={_('fill', styles.bg)} />
       <div className={styles.header}>
         <h1 className={styles.heading}>
           <img className={styles.logo} height={24} src="/assets/vdm.svg" alt="VDM" width={72} />

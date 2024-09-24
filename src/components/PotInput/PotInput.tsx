@@ -1,7 +1,6 @@
 import React from 'react'
 import { getNormalizedEventProp, useDragHandler } from '~/hooks/useDragHandler'
 import { clamp, _ } from '~/utils'
-import uStyles from '~/styles/core/utils.module.css'
 import styles from './PotInput.module.css'
 
 interface PotInputProps {
@@ -62,7 +61,7 @@ export function PotInput({ min, max, onChange, sensitivity = 140, value }: PotIn
   return (
     <div
       {...dragHandler}
-      className={_(uStyles.ui, styles.pot)}
+      className={_('ui', styles.pot)}
       style={{ transform: `rotate(${ratioToDeg(displayValue, min, max)}deg)` }}
     >
       <div className={styles.notch} />

@@ -6,7 +6,6 @@ import { NormalizedEvents } from '~/services/normalizedEvents'
 import { usePlayer } from '~/services/player'
 import { State } from '~/state'
 import { _ } from '~/utils'
-import uStyles from '~/styles/core/utils.module.css'
 import { PadCircle } from './PadCircle'
 import styles from './Pad.module.css'
 import { PadSettings } from './PadSettings'
@@ -22,7 +21,16 @@ interface PadProps {
   volume: number
 }
 
-export const Pad = React.memo(function Pad({ bussId, endTime, id, keyName, src, startTime, tuning, volume }: PadProps) {
+export const Pad = React.memo(function Pad({
+  bussId,
+  endTime,
+  id,
+  keyName,
+  src,
+  startTime,
+  tuning,
+  volume,
+}: PadProps) {
   /**
    * Control the Modal
    * for editing pad settings.
@@ -48,6 +56,7 @@ export const Pad = React.memo(function Pad({ bussId, endTime, id, keyName, src, 
     player.play()
     padCircleRef.current?.play()
     setIsPressed(true)
+    // @todo add enable hype mode switch
     if ((window as any).__HYPE_MODE__) {
       document.getElementById('layout')?.classList.remove('animJolt')
       requestAnimationFrame(() => document.getElementById('layout')?.classList.add('animJolt'))
@@ -76,7 +85,7 @@ export const Pad = React.memo(function Pad({ bussId, endTime, id, keyName, src, 
    */
   const squareProps = {
     className: _(
-      uStyles.ui,
+      'ui',
       styles.pad,
       isPressed ? styles.isPressed : '',
       editKitMode ? styles.editMode : '',
@@ -100,7 +109,13 @@ export const Pad = React.memo(function Pad({ bussId, endTime, id, keyName, src, 
           heading={`EDIT PAD (${keyName})`}
           id={`edit-pad-modal-${id}`}
         >
-          <PadSettings bussId={bussId} padId={id} tuning={tuning} volume={volume} />
+          <PadSettings
+            bussId={bussId}
+            padId={id}
+            src={src}
+            tuning={tuning}
+            volume={volume}
+          />
         </Modal>
       </Square>
     </div>

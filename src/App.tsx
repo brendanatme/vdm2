@@ -20,6 +20,26 @@ const router = createBrowserRouter([
   },
 ])
 
+console.log("%cWelcome!", [
+  'color: #69c',
+  'font-weight: 700',
+  'font-size: 24px',
+].join(';'))
+console.log("%cTodos:", [
+  'color: #69c',
+  'font-weight: 400',
+  'font-size: 16px',
+].join(';'))
+const todos = [
+  '• V favicon',
+  '• Link/font styles',
+  '• PadSettings: trim start and end',
+  '• Sequencer: 2nd bar',
+  '• Sequencer: save/load sequence',
+]
+todos.forEach((todo) => console.log(todo))
+
+
 export function App() {
   return (
     <RouterProvider router={router} />

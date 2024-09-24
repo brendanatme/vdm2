@@ -3,7 +3,6 @@ import { useShallow } from 'zustand/react/shallow'
 import { KitControls } from '~/routes/pads/KitControls'
 import { Pad } from '~/routes/pads/Pad'
 import { State } from '~/state'
-import uStyles from '~/styles/core/utils.module.css'
 import { _ } from '~/utils'
 import styles from './PadsScreen.module.css'
 
@@ -12,9 +11,9 @@ export function PadsScreen() {
   const padIds = State.useState(State.select.pads.padIds)
   const selectedKitPadsIndexed = State.useState(useShallow(State.select.kits.selectedKitPadsIndexed))
   return (
-    <div className={_(uStyles.flex, uStyles.column, uStyles.rel)}>
+    <div className={_('flex', 'column', 'rel')}>
       <div className={styles.body}>
-        <div className={_(uStyles.clearfix, uStyles.pageWidth, styles.group)}>
+        <div className={_('clearfix', 'pageWidth', styles.group)}>
           {padIds.map((padId) => (
             <Pad
               {...selectedKitPadsIndexed[padId]}

@@ -3,7 +3,6 @@ import { useShallow } from 'zustand/react/shallow'
 import { Button } from '~/components/Button'
 import { KitSwitcher } from '~/components/KitSwitcher'
 import { State } from '~/state'
-import uStyles from '~/styles/core/utils.module.css'
 import { _ } from '~/utils'
 import styles from './KitControls.module.css'
 import { SaveKitButton } from './SaveKitButton'
@@ -18,9 +17,9 @@ export function KitControls() {
   
   return (
     <div className={styles.container}>
-      <div className={uStyles.pageWidth}>
+      <div className={'pageWidth'}>
         {editMode && <p className={styles.editMsg}>Select a pad to edit.</p>}
-        <div className={_(uStyles.flex, uStyles.between)}>
+        <div className={_('flex', 'between')}>
           <KitSwitcher />
           <Button
             isActive={editMode}
@@ -29,7 +28,7 @@ export function KitControls() {
           />
         </div>
         {hasEdits ? (
-          <div className={_(uStyles.flex, uStyles.between)}>
+          <div className={_('flex', 'between')}>
             <span>(edited)</span>
             <SaveKitButton />
           </div>

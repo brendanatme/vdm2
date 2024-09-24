@@ -1,6 +1,5 @@
 import React from 'react'
 import { NormalizedEvents } from '~/services/normalizedEvents'
-import uStyles from '~/styles/core/utils.module.css'
 import { _ } from '~/utils'
 import styles from './ArrowButton.module.css'
 
@@ -22,8 +21,8 @@ export function ArrowButton({
 }: ArrowButtonProps) {
   const buttonProps = {
     className: _(
-      uStyles.btnReset,
-      uStyles.ui,
+      'btnReset',
+      'ui',
       styles.arrowBtn,
       isActive ? styles.isActive : '',
       isDisabled ? styles.isDisabled : '',

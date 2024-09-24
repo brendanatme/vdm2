@@ -3,7 +3,6 @@ import { ArrowButton } from '~/components/ArrowButton'
 import { useDragHandler } from '~/hooks/useDragHandler'
 import { publish } from '~/services/pubSub'
 import { SequencerStepConfig } from '~/state'
-import uStyles from '~/styles/core/utils.module.css'
 import { _ } from '~/utils'
 import { SequencerStep } from '../SequencerStep'
 import styles from './SequencerSteps.module.css'
@@ -45,7 +44,7 @@ export function SequencerSteps({ stepChangedEventName, steps }: SequencerStepsPr
   const goToPage1 = React.useCallback(() => setPage(1), [])
 
   return (
-    <div className={_(uStyles.pageWidth, uStyles.narrow, styles.component)}>
+    <div className={_('pageWidth', 'narrow', styles.component)}>
       <div className={styles.container}>
         <div
           className={_(styles.group, styles[`page${page}`])}

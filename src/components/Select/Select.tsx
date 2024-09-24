@@ -1,6 +1,5 @@
 import React from 'react'
 import { _ } from '~/utils'
-import uStyles from '~/styles/core/utils.module.css'
 import styles from './Select.module.css'
 
 interface SelectProps {
@@ -13,7 +12,7 @@ interface SelectProps {
 
 export function Select({ children, large = false, id, onChange, value }: SelectProps) {
   return (
-    <div className={_(uStyles.ui, styles.container, large ? styles.lg : '')}>
+    <div className={_('ui', styles.container, large ? styles.lg : '')}>
       <select className={styles.selectReset} id={id} onChange={onChange} value={value}>
         {children}
       </select>
