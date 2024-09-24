@@ -27,7 +27,7 @@ export function PadSettings({ bussId, padId, src, tuning, volume }: PadSettingsP
 
   const onSoundChange = React.useCallback((value: string) => {
     editPad(padId, { src: value })
-  }, [])
+  }, [editPad, padId])
 
   const onVolumeChange = React.useCallback(
     (value: number) => editPad(padId, { volume: value }),

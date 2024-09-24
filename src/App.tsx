@@ -36,6 +36,7 @@ const todos = [
   '• PadSettings: trim start and end',
   '• Sequencer: 2nd bar',
   '• Sequencer: save/load sequence',
+  '• HYPE_MODE option',
 ]
 todos.forEach((todo) => console.log(todo))
 
