@@ -1,4 +1,6 @@
 
+@import '../../styles/core/media.css';
+
 .container {
   padding: 1rem;
 }
@@ -16,4 +18,10 @@
 
 .container.small .input {
   height: calc(45px + 1rem);
+}
+
+@media (--desktop) {
+  .container.small .input {
+    height: calc(50px + 1rem);
+  }
 }

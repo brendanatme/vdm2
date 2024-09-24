@@ -1,7 +1,7 @@
 /*
   modal
 */
-@import '../../styles/core/variables';
+@import '../../styles/core/media.css';
 
 .modal {
   position: absolute !important;
@@ -25,9 +25,15 @@
 }
 
 .fadeIn .content {
-  height: 380px;
+  height: 32rem;
   width: 320px;
   transition: width .25s var(--ease-out), height .5s var(--ease-out) .25s;
+}
+
+@media (--desktop) {
+  .fadeIn .content {
+    height: 28rem;
+  }
 }
 
 .fadeIn .content * {
