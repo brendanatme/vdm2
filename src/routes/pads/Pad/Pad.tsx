@@ -113,6 +113,7 @@ export const Pad = React.memo(function Pad({
             bussId={bussId}
             endTime={endTime}
             padId={id}
+            play={player.play}
             src={src}
             startTime={startTime}
             tuning={tuning}
