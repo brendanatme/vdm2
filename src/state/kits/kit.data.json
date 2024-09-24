@@ -6,7 +6,7 @@
     "pads": [
       {
         "bussId": "1",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "1",
         "src": "/assets/audio/linndrum/cabasa_linndrum.wav",
         "startTime": 0,
@@ -15,7 +15,7 @@
       },
       {
         "bussId": "2",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "2",
         "src": "/assets/audio/linndrum/cowbell_linndrum.wav",
         "startTime": 0,
@@ -24,7 +24,7 @@
       },
       {
         "bussId": "3",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "3",
         "src": "/assets/audio/linndrum/conga_high_linndrum.wav",
         "startTime": 0,
@@ -33,7 +33,7 @@
       },
       {
         "bussId": "4",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "4",
         "src": "/assets/audio/linndrum/tamb_linndrum.wav",
         "startTime": 0,
@@ -42,7 +42,7 @@
       },
       {
         "bussId": "5",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "5",
         "src": "/assets/audio/linndrum/tom_clean_1.wav",
         "startTime": 0,
@@ -51,7 +51,7 @@
       },
       {
         "bussId": "6",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "6",
         "src": "/assets/audio/linndrum/tom_clean_2.wav",
         "startTime": 0,
@@ -60,7 +60,7 @@
       },
       {
         "bussId": "7",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "7",
         "src": "/assets/audio/linndrum/tom_clean_3.wav",
         "startTime": 0,
@@ -69,7 +69,7 @@
       },
       {
         "bussId": "8",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "8",
         "src": "/assets/audio/linndrum/tom_clean_4.wav",
         "startTime": 0,
@@ -78,7 +78,7 @@
       },
       {
         "bussId": "9",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "9",
         "src": "/assets/audio/linndrum/crash_9000.wav",
         "startTime": 0,
@@ -87,7 +87,7 @@
       },
       {
         "bussId": "10",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "10",
         "src": "/assets/audio/linndrum/clap_dirty.wav",
         "startTime": 0,
@@ -96,7 +96,7 @@
       },
       {
         "bussId": "11",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "11",
         "src": "/assets/audio/linndrum/ride_linndrum.wav",
         "startTime": 0,
@@ -105,7 +105,7 @@
       },
       {
         "bussId": "12",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "12",
         "src": "/assets/audio/linndrum/hh_cl_clip.wav",
         "startTime": 0,
@@ -114,7 +114,7 @@
       },
       {
         "bussId": "13",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "13",
         "src": "/assets/audio/linndrum/kick_room.wav",
         "startTime": 0,
@@ -123,7 +123,7 @@
       },
       {
         "bussId": "14",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "14",
         "src": "/assets/audio/linndrum/snare_polish.wav",
         "startTime": 0,
@@ -132,7 +132,7 @@
       },
       {
         "bussId": "15",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "15",
         "src": "/assets/audio/linndrum/hh_cl_filter.wav",
         "startTime": 0,
@@ -141,7 +141,7 @@
       },
       {
         "bussId": "15",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "16",
         "src": "/assets/audio/linndrum/hh_op_1.wav",
         "startTime": 0,
@@ -157,7 +157,7 @@
     "pads": [
       {
         "bussId": "1",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "1",
         "src": "/assets/audio/lofi/fx_3.mp3",
         "startTime": 0,
@@ -166,7 +166,7 @@
       },
       {
         "bussId": "1",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "2",
         "src": "/assets/audio/lofi/fx_6.wav",
         "startTime": 0,
@@ -175,7 +175,7 @@
       },
       {
         "bussId": "1",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "3",
         "src": "/assets/audio/lofi/fx_7.wav",
         "startTime": 0,
@@ -184,7 +184,7 @@
       },
       {
         "bussId": "1",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "4",
         "src": "/assets/audio/lofi/noise_boombapbox_tape.wav",
         "startTime": 0,
@@ -193,7 +193,7 @@
       },
       {
         "bussId": "5",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "5",
         "src": "/assets/audio/lofi/vibraslap_boombapbox.wav",
         "startTime": 0,
@@ -202,7 +202,7 @@
       },
       {
         "bussId": "6",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "6",
         "src": "/assets/audio/lofi/tom_clean_2.wav",
         "startTime": 0,
@@ -211,7 +211,7 @@
       },
       {
         "bussId": "7",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "7",
         "src": "/assets/audio/lofi/tom_clean_3.wav",
         "startTime": 0,
@@ -220,7 +220,7 @@
       },
       {
         "bussId": "8",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "8",
         "src": "/assets/audio/lofi/tom_clean_4.wav",
         "startTime": 0,
@@ -229,7 +229,7 @@
       },
       {
         "bussId": "9",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "9",
         "src": "/assets/audio/lofi/perc_1_noise.wav",
         "startTime": 0,
@@ -238,7 +238,7 @@
       },
       {
         "bussId": "10",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "10",
         "src": "/assets/audio/lofi/perc_3_bongo.wav",
         "startTime": 0,
@@ -247,7 +247,7 @@
       },
       {
         "bussId": "11",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "11",
         "src": "/assets/audio/lofi/rim_short.wav",
         "startTime": 0,
@@ -256,7 +256,7 @@
       },
       {
         "bussId": "12",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "12",
         "src": "/assets/audio/lofi/shaker_boombapbox_baglady.wav",
         "startTime": 0,
@@ -265,7 +265,7 @@
       },
       {
         "bussId": "13",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "13",
         "src": "/assets/audio/lofi/kick_2.wav",
         "startTime": 0,
@@ -274,7 +274,7 @@
       },
       {
         "bussId": "14",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "14",
         "src": "/assets/audio/lofi/snare_1.wav",
         "startTime": 0,
@@ -283,7 +283,7 @@
       },
       {
         "bussId": "15",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "15",
         "src": "/assets/audio/lofi/hh_cl_4.wav",
         "startTime": 0,
@@ -292,7 +292,7 @@
       },
       {
         "bussId": "15",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "16",
         "src": "/assets/audio/lofi/hh_cl_6.wav",
         "startTime": 0,
@@ -308,7 +308,7 @@
     "pads": [
       {
         "bussId": "1",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "1",
         "src": "/assets/audio/basses/bsgiga_hard.wav",
         "startTime": 0,
@@ -317,7 +317,7 @@
       },
       {
         "bussId": "2",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "2",
         "src": "/assets/audio/basses/bsgiga_mini.wav",
         "startTime": 0,
@@ -326,7 +326,7 @@
       },
       {
         "bussId": "3",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "3",
         "src": "/assets/audio/basses/bsgiga_mini11.wav",
         "startTime": 0,
@@ -335,7 +335,7 @@
       },
       {
         "bussId": "4",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "4",
         "src": "/assets/audio/basses/bsgiga_tx802_11.wav",
         "startTime": 0,
@@ -344,7 +344,7 @@
       },
       {
         "bussId": "5",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "5",
         "src": "/assets/audio/basses/bsgigapack_pluck.wav",
         "startTime": 0,
@@ -362,7 +362,7 @@
       },
       {
         "bussId": "7",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "7",
         "src": "/assets/audio/basses/bsgiga_house.wav",
         "startTime": 0,
@@ -371,7 +371,7 @@
       },
       {
         "bussId": "8",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "8",
         "src": "/assets/audio/basses/bsgiga_90s.wav",
         "startTime": 0,
@@ -380,7 +380,7 @@
       },
       {
         "bussId": "9",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "9",
         "src": "/assets/audio/basses/bsgiga_ban9.wav",
         "startTime": 0,
@@ -389,7 +389,7 @@
       },
       {
         "bussId": "10",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "10",
         "src": "/assets/audio/basses/bsgiga_gold_c2.wav",
         "startTime": 0,
@@ -398,7 +398,7 @@
       },
       {
         "bussId": "11",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "11",
         "src": "/assets/audio/basses/bsgiga_jubs1.wav",
         "startTime": 0,
@@ -407,7 +407,7 @@
       },
       {
         "bussId": "12",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "12",
         "src": "/assets/audio/basses/bsgiga_mini.wav",
         "startTime": 0,
@@ -416,7 +416,7 @@
       },
       {
         "bussId": "13",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "13",
         "src": "/assets/audio/basses/boombapbox_slap.wav",
         "startTime": 0,
@@ -425,7 +425,7 @@
       },
       {
         "bussId": "14",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "14",
         "src": "/assets/audio/basses/boombapbox_electric.wav",
         "startTime": 0,
@@ -434,7 +434,7 @@
       },
       {
         "bussId": "15",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "15",
         "src": "/assets/audio/basses/boombapbox_sine.wav",
         "startTime": 0,
@@ -443,7 +443,7 @@
       },
       {
         "bussId": "15",
-        "endTime": 9999,
+        "endTime": 5000,
         "id": "16",
         "tuning": 0,
         "src": "/assets/audio/basses/boombapbox_double.wav",

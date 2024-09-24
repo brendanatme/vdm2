@@ -6,11 +6,12 @@ interface FormFieldProps {
   children: React.ReactNode
   label: string
   noFlex?: boolean
+  small?: boolean
 }
 
-export function FormField({ children, label, noFlex = false }: FormFieldProps) {
+export function FormField({ children, label, noFlex = false, small = false }: FormFieldProps) {
   return (
-    <div className={styles.container}>
+    <div className={_(styles.container, small ? styles.small : '')}>
       <div className={_(styles.input, noFlex ? styles.noFlex : '')}>
         {children}
       </div>

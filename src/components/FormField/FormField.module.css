@@ -13,3 +13,7 @@
 .input.noFlex { 
   display: block;
 }
+
+.container.small .input {
+  height: calc(45px + 1rem);
+}

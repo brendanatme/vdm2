@@ -25,7 +25,7 @@
 }
 
 .fadeIn .content {
-  height: 360px;
+  height: 380px;
   width: 320px;
   transition: width .25s var(--ease-out), height .5s var(--ease-out) .25s;
 }

@@ -20,28 +20,29 @@ const router = createBrowserRouter([
   },
 ])
 
-console.log("%cWelcome!", [
-  'color: #69c',
-  'font-weight: 700',
-  'font-size: 24px',
-].join(';'))
-console.log("%cTodos:", [
-  'color: #69c',
-  'font-weight: 400',
-  'font-size: 16px',
-].join(';'))
-const todos = [
-  '• V favicon',
-  '• Link/font styles',
-  '• PadSettings: trim start and end',
-  '• Sequencer: 2nd bar',
-  '• Sequencer: save/load sequence',
-  '• HYPE_MODE option',
-  '• server (deep-linking support)',
-  '• use pointer events',
-]
-todos.forEach((todo) => console.log(todo))
-
+if (process.env.NODE_ENV !== 'production') {
+  console.log("%cWelcome!", [
+    'color: #69c',
+    'font-weight: 700',
+    'font-size: 24px',
+  ].join(';'))
+  console.log("%cTodos:", [
+    'color: #69c',
+    'font-weight: 400',
+    'font-size: 16px',
+  ].join(';'))
+  const todos = [
+    '• V favicon',
+    '• Link/font styles',
+    '• PadSettings: trim start and end',
+    '• Sequencer: 2nd bar',
+    '• Sequencer: save/load sequence',
+    '• HYPE_MODE option',
+    '• server (deep-linking support)',
+    '• use pointer events',
+  ]
+  todos.forEach((todo) => console.log(todo))
+}
 
 export function App() {
   return (

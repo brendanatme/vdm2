@@ -111,8 +111,10 @@ export const Pad = React.memo(function Pad({
         >
           <PadSettings
             bussId={bussId}
+            endTime={endTime}
             padId={id}
             src={src}
+            startTime={startTime}
             tuning={tuning}
             volume={volume}
           />
