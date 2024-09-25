@@ -32,7 +32,7 @@ export function SequencerScreen() {
 
   return (
     <div className={_('flex', 'column', 'rel')}>
-      <div className={styles.body}>
+      <div className={_('flex', styles.body)}>
         <SequencerSteps stepChangedEventName={STEP_CHANGED} steps={steps} />
       </div>
       <div className={styles.footer}>

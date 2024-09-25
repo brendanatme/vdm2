@@ -12,7 +12,7 @@ export function PadsScreen() {
   const selectedKitPadsIndexed = State.useState(useShallow(State.select.kits.selectedKitPadsIndexed))
   return (
     <div className={_('flex', 'column', 'rel')}>
-      <div className={styles.body}>
+      <div className={_('flex', styles.body)}>
         <div className={_('clearfix', 'pageWidth', styles.group)}>
           {padIds.map((padId) => (
             <Pad

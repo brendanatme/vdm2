@@ -3,7 +3,7 @@
 
 @media (--desktop) {
   .component {
-    margin-bottom: -10rem;
+    margin-bottom: -6rem;
     transform: translateY(-60px) rotate(270deg);
   }
 }
