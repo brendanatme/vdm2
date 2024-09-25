@@ -2,7 +2,6 @@ import React from 'react'
 import { Square } from '~/components/Square'
 import { Modal, useModalState } from '~/components/Modal'
 import { useKeyHandler, KeyboardEvents } from '~/hooks/useKeyHandler'
-import { NormalizedEvents } from '~/services/normalizedEvents'
 import { usePlayer } from '~/services/player'
 import { State } from '~/state'
 import { _ } from '~/utils'
@@ -88,25 +87,23 @@ export const Pad = React.memo(function Pad({
    * or open the edit modal. If the edit modal is open,
    * clicking should do nothing
    */
-  const squareProps = {
-    className: _(
-      'ui',
-      styles.pad,
-      isPressed ? styles.isPressed : '',
-      editKitMode ? styles.editMode : '',
-    ),
-    flexFill: true,
-    [NormalizedEvents.onMouseDown]: !editKitMode
-      ? onPlay
-      : undefined,
-    [NormalizedEvents.onMouseUp]: editKitMode && !modal.isOpen
-      ? modal.open
-      : undefined,
-  }
-
   return (
     <div className={styles.container}>
-      <Square {...squareProps}>
+      <Square
+        className={_(
+          'ui',
+          styles.pad,
+          isPressed ? styles.isPressed : '',
+          editKitMode ? styles.editMode : '',
+        )}
+        flexFill
+        onPointerDown={!editKitMode
+          ? onPlay
+          : undefined}
+        onPointerUp={editKitMode && !modal.isOpen
+          ? modal.open
+          : undefined}
+      >
         <PadCircle ref={padCircleRef} />
         <div className={styles.padKey}>{keyName}</div>
         <Modal

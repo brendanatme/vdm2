@@ -4,7 +4,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 import { KeyboardEvents, useKeyHandler } from '~/hooks/useKeyHandler'
-import { NormalizedEvents } from '~/services/normalizedEvents'
 import styles from './Modal.module.css'
 import { _ } from '~/utils'
 import { State } from '~/state'
@@ -55,10 +54,6 @@ export function Modal({ children = null, close, heading, id, isOpen }: ModalProp
     key: 'escape',
   })
 
-  const onCloseProps = {
-    [NormalizedEvents.onMouseDown]: close,
-  } as const
-
   return ReactDom.createPortal((
     <div
       className={_(
@@ -72,7 +67,7 @@ export function Modal({ children = null, close, heading, id, isOpen }: ModalProp
     >
       <div
         className={_('fill', styles.bg)}
-        {...onCloseProps}
+        onPointerDown={close}
       />
 
       <div className={_(styles.content, 'vcenteree')}>
@@ -82,7 +77,7 @@ export function Modal({ children = null, close, heading, id, isOpen }: ModalProp
 
       <a
         className={_('ui', 'btnReset', styles.close)}
-        {...onCloseProps}
+        onPointerDown={close}
       >
         X (Esc)
       </a>

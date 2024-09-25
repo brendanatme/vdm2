@@ -1,5 +1,4 @@
 import React from 'react'
-import { NormalizedEvents } from '~/services/normalizedEvents'
 import { _ } from '~/utils'
 import styles from './ArrowButton.module.css'
 
@@ -21,20 +20,18 @@ export function ArrowButton({
   point = 'right',
   prev = false,
 }: ArrowButtonProps) {
-  const buttonProps = {
-    className: _(
-      'btnReset',
-      'ui',
-      styles.arrowBtn,
-      isActive ? styles.isActive : '',
-      isDisabled ? styles.isDisabled : '',
-    ),
-    [NormalizedEvents.onMouseDown]: onClick,
-    type: 'button',
-  } as const
-
   return (
-    <button {...buttonProps}>
+    <button
+      className={_(
+        'btnReset',
+        'ui',
+        styles.arrowBtn,
+        isActive ? styles.isActive : '',
+        isDisabled ? styles.isDisabled : '',
+      )}
+      onPointerDown={onClick}
+      type="button"
+    >
       <span className={_(styles.arrow, styles[point])} />
     </button>
   )

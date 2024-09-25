@@ -1,4 +1,3 @@
-// @todo use pointer events
 import React from 'react'
 
 function detectTouchscreen() {
@@ -18,10 +17,10 @@ function detectTouchscreen() {
       result = true;
     }
   }
-  return result;
+  return result
 }
 
-export const isTouchScreen = detectTouchscreen()
+const isTouchScreen = detectTouchscreen()
 
 type NormalizedEventTypes = MouseEvent | React.MouseEvent | TouchEvent | React.TouchEvent
 

@@ -38,7 +38,6 @@ if (process.env.NODE_ENV !== 'production') {
   const todos = [
     '• Sequencer: save/load sequence',
     '• server (deep-linking support)',
-    '• use pointer events',
   ]
   todos.forEach((todo) => console.log(todo))
 }
