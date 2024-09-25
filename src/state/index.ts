@@ -6,6 +6,8 @@ import { modalSelectors } from './modals/modal.selectors'
 import { createModalSlice } from './modals/modal.state'
 import { padSelectors } from './pads/pad.selectors'
 import { createPadSlice } from './pads/pad.state'
+import { settingsSelectors } from './settings/settings.selectors'
+import { createSettingsSlice } from './settings/settings.state'
 import { sequencerSelectors } from './sequencer/sequencer.selectors'
 import { createSequencerSlice } from './sequencer/sequencer.state'
 import { StoreState } from './types'
@@ -21,6 +23,7 @@ export const State = {
         ...createKitSlice(...a),
         ...createModalSlice(...a),
         ...createPadSlice(...a),
+        ...createSettingsSlice(...a),
         ...createSequencerSlice(...a),
       }),
       { name: '__UI_STATE__' },
@@ -30,6 +33,7 @@ export const State = {
     kits: kitSelectors,
     modals: modalSelectors,
     pads: padSelectors,
+    settings: settingsSelectors,
     sequencer: sequencerSelectors,
   },
 }

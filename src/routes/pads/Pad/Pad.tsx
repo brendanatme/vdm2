@@ -37,7 +37,10 @@ export const Pad = React.memo(function Pad({
    */
   const editKitMode = State.useState(State.select.kits.editMode)
   const disableEditKitMode = State.useState(State.select.kits.disableEditMode)
+  const hypeModeEnabled = State.useState(State.select.settings.hypeModeEnabled)
+  
   const modal = useModalState()
+  
   const exitEditMode = React.useCallback(() => {
     modal.close()
     disableEditKitMode()
@@ -52,18 +55,20 @@ export const Pad = React.memo(function Pad({
   const [isPressed, setIsPressed] = React.useState(false)
   const padCircleRef = React.useRef<{ play: () => void }>(null)
   const player = usePlayer({ bussId, endTime, padId: id, src, startTime, tuning, volume })
+  
   const onPlay = React.useCallback(() => {
     player.play()
     padCircleRef.current?.play()
     setIsPressed(true)
-    // @todo add enable hype mode switch
-    if ((window as any).__HYPE_MODE__) {
+    
+    if (hypeModeEnabled) {
       document.getElementById('layout')?.classList.remove('animJolt')
       requestAnimationFrame(() => document.getElementById('layout')?.classList.add('animJolt'))
     }
+    
     setTimeout(() => setIsPressed(false), 100)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [player.play])
+  }, [player.play, hypeModeEnabled])
 
   /**
    * User can use keyboard to play sound

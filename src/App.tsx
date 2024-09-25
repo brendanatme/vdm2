@@ -16,6 +16,10 @@ const router = createBrowserRouter([
         path: 'sequencer',
         element: <Routes.SequencerScreen />,
       },
+      {
+        path: 'settings',
+        element: <Routes.SettingsScreen />,
+      },
     ],
   },
 ])

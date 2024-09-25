@@ -90,6 +90,28 @@
   padding: 0 3rem;
 }
 
+.pageBody {
+  flex-grow: 1;
+  width: 100%;
+}
+
+.pageFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  background-color: var(--blue1);
+  border-top: 1px solid var(--blue3-5);
+  padding: 0.5rem 0 1.5rem;
+  position: relative;
+  width: 100%;
+}
+
+.textCenter {
+  text-align: center;
+}
+
 .ui {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
