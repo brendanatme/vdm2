@@ -14,21 +14,16 @@ export const checkForActiveBars = (steps: SequencerStepConfig[]): number => {
   // 1st bar in sequencer is always active.
   let activeBar = 1
 
-  // We start by checking bar 1.
-  let checkingBar = 1
+  // We start by checking bar 2.
+  let checkingBar = 2
   
-  for (let i = 0; i < steps.length; i++) {
+  for (let i = 16; i < steps.length; i++) {
     const step = steps[i]
-    
-    // If we've reached step 16, we've begun checking bar 2
-    if (i === 16) {
-      checkingBar++
-    }
 
     // If the bar we're checking is already active,
-    // we don't need to keep checking it; just continue.
+    // we don't need to keep checking it; just return.
     if (activeBar === checkingBar) {
-      continue
+      break
     }
 
     for (let stepPadId of len16) {
