@@ -36,7 +36,6 @@ if (process.env.NODE_ENV !== 'production') {
     'font-size: 16px',
   ].join(';'))
   const todos = [
-    '• Link/font styles',
     '• Sequencer: save/load sequence',
     '• server (deep-linking support)',
     '• use pointer events',
