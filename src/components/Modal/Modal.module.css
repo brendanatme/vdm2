@@ -12,7 +12,7 @@
 }
 
 .content {
-  background: rgba(0, 0, 0, .85);
+  background: rgba(25, 25, 33, .9);
   border: 1px solid var(--gray2);
   border-radius: 4px;
   height: 1px;

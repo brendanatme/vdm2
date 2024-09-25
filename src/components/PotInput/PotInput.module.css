@@ -1,12 +1,10 @@
 
-@import '../../styles/core/variables';
-
 :root {
   --pot-diameter: 61px;
 }
 
 .pot {
-  border: 1px solid var(--white);
+  border: 1px solid var(--gray4);
   border-radius: calc(var(--pot-diameter) / 2);
   position: relative;
   height: var(--pot-diameter);
@@ -14,7 +12,7 @@
 }
 
 .notch {
-  background: var(--white);
+  background: var(--gray4);
   height: calc(var(--pot-diameter) / 6);
   left: 50%;
   position: absolute;
