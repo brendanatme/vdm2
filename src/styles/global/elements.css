@@ -33,7 +33,7 @@ body,
 
 body {
   background: var(--blue2);
-  color: var(--white);
+  color: var(--gray4);
 }
 
 a {

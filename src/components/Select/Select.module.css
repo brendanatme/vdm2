@@ -1,8 +1,8 @@
 
 .container {
-  border: 1px solid var(--white);
+  border: 1px solid var(--gray4);
   border-radius: 4px;
-  color: var(--white);
+  color: var(--gray4);
   font-size: 1rem;
   position: relative;
   width: 100%;
@@ -43,5 +43,5 @@
 }
 
 .triangle.triangleDown {
-  border-top: 0.5rem solid var(--white);
+  border-top: 0.5rem solid var(--gray4);
 }

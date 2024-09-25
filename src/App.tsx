@@ -38,7 +38,6 @@ if (process.env.NODE_ENV !== 'production') {
   const todos = [
     '• Link/font styles',
     '• Sequencer: save/load sequence',
-    '• HYPE_MODE option',
     '• server (deep-linking support)',
     '• use pointer events',
   ]

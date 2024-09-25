@@ -2,9 +2,9 @@
 @import '../../styles/core/media.css';
 
 .arrowBtn {
-  border: 1px solid var(--white);
+  border: 1px solid var(--gray4);
   border-radius: 4px;
-  color: var(--white);
+  color: var(--gray4);
   padding: .5rem 1rem;
   transition: border-color .3s, color .3s;
 }
@@ -39,7 +39,7 @@
 }
 
 .arrow.right {
-  border-left: 0.5rem solid var(--white);
+  border-left: 0.5rem solid var(--gray4);
 }
 .arrowBtn:hover .arrow.right {
   border-left-color: var(--blue5);
@@ -50,7 +50,7 @@
 }
 
 .arrow.left {
-  border-right: 0.5rem solid var(--white);
+  border-right: 0.5rem solid var(--gray4);
 }
 .arrowBtn:hover .arrow.left {
   border-right-color: var(--blue5);
@@ -67,7 +67,7 @@
 }
 
 .arrow.up {
-  border-bottom: 0.5rem solid var(--white);
+  border-bottom: 0.5rem solid var(--gray4);
 }
 
 .arrowBtn:hover .arrow.up {
@@ -80,7 +80,7 @@
 }
 
 .arrow.down {
-  border-top: 0.5rem solid var(--white);
+  border-top: 0.5rem solid var(--gray4);
 }
 
 .arrowBtn:hover .arrow.down {
