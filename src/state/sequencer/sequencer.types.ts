@@ -26,11 +26,18 @@ export interface SequencerStepConfig {
   ["4"]: boolean
 }
 
+export interface Sequence {
+  id: string
+  name: string
+  steps: SequencerStepConfig[]
+}
+
 export interface SequencerState {
   // state
   sequencerActiveBars: number
   sequencerBpm: number | undefined
-  sequencerSteps: SequencerStepConfig[]
+  sequences: Record<string, Sequence>
+  selectedSequenceId: string
 
   // actions
   updateSequencerBpm: (n: number | undefined) => void

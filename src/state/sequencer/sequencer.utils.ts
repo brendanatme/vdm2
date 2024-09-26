@@ -4,12 +4,6 @@ import { SequencerStepConfig } from './sequencer.types'
 // number of pad IDs
 const len16 = createArrayFromLength(16)
 
-// 2 bars x 16 steps per bar
-const len32 = createArrayFromLength(32)
-
-export const generateSteps = (step: SequencerStepConfig): SequencerStepConfig[] =>
-  len32.map(() => step)
-
 export const checkForActiveBars = (steps: SequencerStepConfig[]): number => {
   // 1st bar in sequencer is always active.
   let activeBar = 1

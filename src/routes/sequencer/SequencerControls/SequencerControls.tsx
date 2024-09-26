@@ -28,7 +28,10 @@ export function SequencerControls({ stepChangedEventName, steps }: SequencerCont
   const activeBars = State.useState(State.select.sequencer.activeBars)
   const bpm = State.useState(State.select.sequencer.bpm)
   const padsIndexed = State.useState(useShallow(State.select.kits.selectedKitPadsIndexed))
-  const emitStepChangeEvent = React.useCallback((stepIndex: number) => publish<number>(stepChangedEventName, stepIndex), [])
+  const emitStepChangeEvent = React.useCallback(
+    (stepIndex: number) => publish<number>(stepChangedEventName, stepIndex),
+    [stepChangedEventName],
+  )
 
   const sequencePlayer = useSequencePlayer({
     activeBars,
