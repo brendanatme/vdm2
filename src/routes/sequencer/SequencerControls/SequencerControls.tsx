@@ -61,11 +61,9 @@ export function SequencerControls({ stepChangedEventName, steps }: SequencerCont
         <FormField>
           <KitSwitcher />
         </FormField>
-        <div style={{ display: 'none' }}>
-          <FormField>
-            <SequenceSwitcher />
-          </FormField>
-        </div>
+        <FormField>
+          <SequenceSwitcher />
+        </FormField>
       </Modal>
     </div>
   )

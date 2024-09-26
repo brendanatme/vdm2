@@ -13,7 +13,7 @@ export function KitSwitcher() {
   return (
     <KitSelect
       id="KitSwitcher_Select"
-      kitType="all"
+      type="all"
       label="Kit:"
       onChange={selectKitById}
       value={selectedKit.id}

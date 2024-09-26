@@ -13,6 +13,7 @@ export const createSequencerSlice: StateCreator<SequencerState> = (set) => ({
   selectedSequenceId: sequences[0].id,
 
   // actions
+  selectSequenceById: (sequenceId: string) => set(() => ({ selectedSequenceId: sequenceId })),
   updateSequencerBpm: (n) => set(() => ({ sequencerBpm: n })),
   updateSequencerStep: (stepIndex, padId) => set((state) => {
     const sequence = state.sequences[state.selectedSequenceId]

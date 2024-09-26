@@ -75,7 +75,7 @@ export function PadSettings({
         <FormField label="Sound" noFlex small>
           <KitSelect
             id={`PadSettings_${padId}_KitSelect`}
-            kitType="all"
+            type="all"
             onChange={onKitChange}
             value={_selectedKitId}
           />

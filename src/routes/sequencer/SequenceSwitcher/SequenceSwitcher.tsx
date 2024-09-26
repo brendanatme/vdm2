@@ -1,22 +1,22 @@
 import React from 'react'
 import { useShallow } from 'zustand/react/shallow'
-import { KitSelect } from '~/components/KitSelect'
+import { SequenceSelect } from '~/components/SequenceSelect'
 import { State } from '~/state'
 
 export function SequenceSwitcher() {
   /**
-   * kit switching
+   * sequence switching
    */
-  const selectedKit = State.useState(useShallow(State.select.kits.selectedKit))
-  const selectKitById = State.useState(State.select.kits.selectKitById)
+  const selectedSequence = State.useState(useShallow(State.select.sequencer.selectedSequence))
+  const selectSequenceById = State.useState(State.select.sequencer.selectSequenceById)
 
   return (
-    <KitSelect
+    <SequenceSelect
       id="SequenceSwitcher_Select"
-      kitType="all"
-      label="Kit:"
-      onChange={selectKitById}
-      value={selectedKit.id}
+      type="all"
+      label="Sequence:"
+      onChange={selectSequenceById}
+      value={selectedSequence.id}
     />
   )
 }

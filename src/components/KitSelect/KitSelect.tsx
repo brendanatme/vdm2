@@ -6,18 +6,18 @@ import { _ } from '~/utils'
 
 interface KitSelectProps {
   id: string
-  kitType: 'default' | 'user' | 'all'
+  type: 'default' | 'user' | 'all'
   label?: string
   onChange?: (kitId: string) => void
   value?: string
 }
 
-export function KitSelect({ id, kitType, label, onChange, value }: KitSelectProps) {
+export function KitSelect({ id, type, label, onChange, value }: KitSelectProps) {
   const defaultKits = State.useState(useShallow(State.select.kits.defaultKits))
   const userKits = State.useState(useShallow(State.select.kits.userKits))
 
-  const showUserKits = kitType === 'all' || kitType === 'user'
-  const showDefaultKits = kitType === 'all' || kitType === 'default'
+  const showUserKits = type === 'all' || type === 'user'
+  const showDefaultKits = type === 'all' || type === 'default'
 
   const handleChange = React.useCallback(
     (e: React.ChangeEvent<HTMLSelectElement>) => onChange?.(e.target.value),

@@ -26,20 +26,29 @@ export interface SequencerStepConfig {
   ["4"]: boolean
 }
 
+export type SequenceType = 'default' | 'user'
+
+export enum SequenceTypes {
+  Default = 'default',
+  User = 'user',
+}
+
 export interface Sequence {
   id: string
   name: string
   steps: SequencerStepConfig[]
+  type: SequenceType
 }
 
 export interface SequencerState {
   // state
-  sequencerActiveBars: number
-  sequencerBpm: number | undefined
   sequences: Record<string, Sequence>
   selectedSequenceId: string
+  sequencerActiveBars: number
+  sequencerBpm: number | undefined
 
   // actions
+  selectSequenceById: (id: string) => void
   updateSequencerBpm: (n: number | undefined) => void
   updateSequencerStep: (stepIndex: number, padId: keyof SequencerStepConfig) => void
 }

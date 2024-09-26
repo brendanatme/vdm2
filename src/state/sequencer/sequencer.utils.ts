@@ -1,5 +1,5 @@
-import { createArrayFromLength } from '~/utils'
-import { SequencerStepConfig } from './sequencer.types'
+import { createArrayFromLength, sortBy } from '~/utils'
+import { Sequence, SequenceTypes, SequencerStepConfig } from './sequencer.types'
 
 // number of pad IDs
 const len16 = createArrayFromLength(16)
@@ -30,3 +30,9 @@ export const checkForActiveBars = (steps: SequencerStepConfig[]): number => {
 
   return activeBar
 }
+
+export const mapAndSortSequences = (sequencesIndexed: Record<string, Sequence>): Sequence[] => sortBy<Sequence>('id')(Object.values(sequencesIndexed))
+
+export const defaultSequenceTypeFilter = (kit: Sequence) => kit.type === SequenceTypes.Default
+
+export const userSequenceTypeFilter = (kit: Sequence) => kit.type === SequenceTypes.User
