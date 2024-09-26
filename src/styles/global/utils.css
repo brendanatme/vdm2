@@ -92,20 +92,27 @@
 
 .pageBody {
   flex-grow: 1;
+  min-height: 0;
   width: 100%;
 }
 
 .pageFooter {
-  display: flex;
   align-items: center;
+  display: flex;
+  /* flex-shrink: 0; */
+  height: 6.5rem;
   justify-content: center;
+  position: relative;
   width: 100%;
 
   background-color: var(--blue1);
   border-top: 1px solid var(--blue3-5);
-  padding: 0.5rem 0 1.5rem;
+  padding: 1rem 0;
+}
+
+.scrollable {
+  overflow-y: scroll;
   position: relative;
-  width: 100%;
 }
 
 .textCenter {

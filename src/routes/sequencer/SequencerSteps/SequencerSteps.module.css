@@ -1,11 +1,15 @@
 
 @import '../../../styles/core/media.css';
 
-@media (--desktop) {
+@media (--tablet) {
   .component {
     margin-bottom: -6rem;
     transform: translateY(-60px) rotate(270deg);
   }
+}
+
+.component {
+  flex-shrink: 1;
 }
 
 .container {

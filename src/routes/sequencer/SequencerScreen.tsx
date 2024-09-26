@@ -30,7 +30,7 @@ export function SequencerScreen() {
 
   return (
     <div className="flex column rel">
-      <div className="flex pageBody">
+      <div className="flex pageBody scrollable">
         <SequencerSteps stepChangedEventName={STEP_CHANGED} steps={steps} />
       </div>
       <div className="pageFooter">

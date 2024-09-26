@@ -38,6 +38,10 @@ if (process.env.NODE_ENV !== 'production') {
   const todos = [
     '• Sequencer: save/load sequence',
     '• server (deep-linking support)',
+    '• add kits',
+    '• compress kit sounds',
+    '• export sequence to audio',
+    '• export sequence to midi',
   ]
   todos.forEach((todo) => console.log(todo))
 }
