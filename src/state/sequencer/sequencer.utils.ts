@@ -4,6 +4,8 @@ import { Sequence, SequenceTypes, SequencerStepConfig } from './sequencer.types'
 // number of pad IDs
 const len16 = createArrayFromLength(16)
 
+export const len32 = createArrayFromLength(32)
+
 export const checkForActiveBars = (steps: SequencerStepConfig[]): number => {
   // 1st bar in sequencer is always active.
   let activeBar = 1
@@ -36,3 +38,6 @@ export const mapAndSortSequences = (sequencesIndexed: Record<string, Sequence>):
 export const defaultSequenceTypeFilter = (kit: Sequence) => kit.type === SequenceTypes.Default
 
 export const userSequenceTypeFilter = (kit: Sequence) => kit.type === SequenceTypes.User
+
+export const mergeSteps = (steps: SequencerStepConfig[], edits: Partial<SequencerStepConfig>[]): SequencerStepConfig[] =>
+  steps.map((step, i) => Object.assign({}, step, edits[i]))

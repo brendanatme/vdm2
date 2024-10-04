@@ -9,7 +9,7 @@ export function SequenceSwitcher() {
    */
   const selectedSequence = State.useState(useShallow(State.select.sequencer.selectedSequence))
   const selectSequenceById = State.useState(State.select.sequencer.selectSequenceById)
-
+  
   return (
     <SequenceSelect
       id="SequenceSwitcher_Select"

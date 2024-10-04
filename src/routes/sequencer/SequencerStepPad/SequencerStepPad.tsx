@@ -48,10 +48,10 @@ export const SequencerStepPad = React.memo(function SequencerStepPad({
     (e: CustomEvent<React.MouseEvent | React.TouchEvent | MouseEvent | TouchEvent>) => {
       if (isOnElement(e.detail) && !didUpdate.current) {
         didUpdate.current = true
-        updateStep(step, padId)
+        updateStep(step, padId, isActive)
       }
     },
-    [isOnElement, updateStep, step, padId],
+    [isOnElement, updateStep, step, padId, isActive],
   )
 
   const resetDragTracking = React.useCallback(() => {

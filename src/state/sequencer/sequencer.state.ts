@@ -3,7 +3,7 @@ import { indexBy, splice } from '~/utils'
 import { Sequence } from './sequencer.types'
 import sequences from './sequencer.data.json'
 import { SequencerState } from './sequencer.types'
-import { checkForActiveBars } from './sequencer.utils'
+import { checkForActiveBars, len32, mergeSteps } from './sequencer.utils'
 
 export const createSequencerSlice: StateCreator<SequencerState> = (set) => ({
   // state
@@ -11,27 +11,21 @@ export const createSequencerSlice: StateCreator<SequencerState> = (set) => ({
   sequencerBpm: 120,
   sequences: indexBy<Sequence>('id')(sequences as Sequence[]),
   selectedSequenceId: sequences[0].id,
+  sequencerEdits: len32.map(() => ({ })),
 
   // actions
   selectSequenceById: (sequenceId: string) => set(() => ({ selectedSequenceId: sequenceId })),
   updateSequencerBpm: (n) => set(() => ({ sequencerBpm: n })),
-  updateSequencerStep: (stepIndex, padId) => set((state) => {
-    const sequence = state.sequences[state.selectedSequenceId]
-    const steps = sequence.steps
-    const updatedSteps = splice(steps, stepIndex, {
-      ...steps[stepIndex],
-      [padId]: !steps[stepIndex][padId],
-    })
-    const sequencerActiveBars = checkForActiveBars(updatedSteps)
+  updateSequencerStep: (stepIndex, padId, value) => set((state) => {
+    const editedStep = state.sequencerEdits[stepIndex]
+    editedStep[padId] = !value
+    
+    const sequencerActiveBars = checkForActiveBars(
+      mergeSteps(state.sequences[state.selectedSequenceId].steps, state.sequencerEdits),
+    )
 
     return {
-      sequences: {
-        ...state.sequences,
-        [state.selectedSequenceId]: {
-          ...sequence,
-          steps: updatedSteps,
-        }
-      },
+      sequencerEdits: splice(state.sequencerEdits, stepIndex, editedStep),
       sequencerActiveBars,
     }
   }),

@@ -46,10 +46,11 @@ export interface SequencerState {
   selectedSequenceId: string
   sequencerActiveBars: number
   sequencerBpm: number | undefined
+  sequencerEdits: Partial<SequencerStepConfig>[]
 
   // actions
   selectSequenceById: (id: string) => void
   updateSequencerBpm: (n: number | undefined) => void
-  updateSequencerStep: (stepIndex: number, padId: keyof SequencerStepConfig) => void
+  updateSequencerStep: (stepIndex: number, padId: keyof SequencerStepConfig, value: boolean) => void
 }
 

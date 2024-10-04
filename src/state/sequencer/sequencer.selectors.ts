@@ -3,6 +3,7 @@ import {
   mapAndSortSequences,
   userSequenceTypeFilter,
   defaultSequenceTypeFilter,
+  mergeSteps,
 } from './sequencer.utils'
 
 export const sequencerSelectors = {
@@ -10,7 +11,7 @@ export const sequencerSelectors = {
   activeBars: ( state: StoreState) => state.sequencerActiveBars,
   bpm: (state: StoreState) => state.sequencerBpm,
   selectedSequence: (state: StoreState) => state.sequences[state.selectedSequenceId],
-  steps: (state: StoreState) => state.sequences[state.selectedSequenceId]?.steps ?? [],
+  steps: (state: StoreState) => mergeSteps(state.sequences[state.selectedSequenceId].steps, state.sequencerEdits),
   userSequences: (state: StoreState) => mapAndSortSequences(state.sequences).filter(userSequenceTypeFilter),
   defaultSequences: (state: StoreState) => mapAndSortSequences(state.sequences).filter(defaultSequenceTypeFilter),
 
