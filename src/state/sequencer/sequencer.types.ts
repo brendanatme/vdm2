@@ -52,5 +52,6 @@ export interface SequencerState {
   selectSequenceById: (id: string) => void
   updateSequencerBpm: (n: number | undefined) => void
   updateSequencerStep: (stepIndex: number, padId: keyof SequencerStepConfig, value: boolean) => void
+  saveSequence: (sequenceName: string) => void
 }
 

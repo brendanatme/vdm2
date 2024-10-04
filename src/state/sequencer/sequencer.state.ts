@@ -1,9 +1,9 @@
 import type { StateCreator } from 'zustand'
 import { indexBy, splice } from '~/utils'
-import { Sequence } from './sequencer.types'
+import { Sequence, SequenceTypes } from './sequencer.types'
 import sequences from './sequencer.data.json'
 import { SequencerState } from './sequencer.types'
-import { checkForActiveBars, len32, mergeSteps } from './sequencer.utils'
+import { checkForActiveBars, createDefaultSequencerEdits, mergeSteps } from './sequencer.utils'
 
 export const createSequencerSlice: StateCreator<SequencerState> = (set) => ({
   // state
@@ -11,7 +11,7 @@ export const createSequencerSlice: StateCreator<SequencerState> = (set) => ({
   sequencerBpm: 120,
   sequences: indexBy<Sequence>('id')(sequences as Sequence[]),
   selectedSequenceId: sequences[0].id,
-  sequencerEdits: len32.map(() => ({ })),
+  sequencerEdits: createDefaultSequencerEdits(),
 
   // actions
   selectSequenceById: (sequenceId: string) => set(() => ({ selectedSequenceId: sequenceId })),
@@ -27,6 +27,25 @@ export const createSequencerSlice: StateCreator<SequencerState> = (set) => ({
     return {
       sequencerEdits: splice(state.sequencerEdits, stepIndex, editedStep),
       sequencerActiveBars,
+    }
+  }),
+  saveSequence: (sequenceName) => set((state) => {
+    const mergedSteps = mergeSteps(state.sequences[state.selectedSequenceId].steps, state.sequencerEdits)
+    
+    const sequence: Sequence = {
+      id: sequenceName,
+      name: sequenceName,
+      type: SequenceTypes.User,
+      steps: mergedSteps,
+    }
+
+    return {
+      sequencerEdits: createDefaultSequencerEdits(),
+      selectedSequenceId: sequence.id,
+      sequences: {
+        ...state.sequences,
+        [sequence.id]: sequence,
+      },
     }
   }),
 })

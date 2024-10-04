@@ -10,6 +10,7 @@ import { SequencerStepConfig, State } from '~/state'
 import { BpmInput } from '../BpmInput'
 import { PlayButton } from '../PlayButton'
 import { SequenceSwitcher } from '../SequenceSwitcher'
+import { SaveSequenceForm } from '../SaveSequenceForm'
 
 interface SequencerControlsProps {
   stepChangedEventName: string
@@ -41,6 +42,11 @@ export function SequencerControls({ stepChangedEventName, steps }: SequencerCont
     steps,
   })
 
+  /**
+   * control modal
+   */
+  const hasSequencerEdits = State.useState(useShallow(State.select.sequencer.hasEdits))
+
   return (
     <div className="pageWidth narrow">
       <div className="flex fullWidth between">
@@ -61,9 +67,13 @@ export function SequencerControls({ stepChangedEventName, steps }: SequencerCont
         <FormField>
           <KitSwitcher />
         </FormField>
-        <FormField>
+        <FormField noFlex>
           <SequenceSwitcher />
+          {hasSequencerEdits && (<p>(edited)</p>)}
         </FormField>
+        {hasSequencerEdits && (
+          <SaveSequenceForm onSuccess={modal.close} />
+        )}
       </Modal>
     </div>
   )
