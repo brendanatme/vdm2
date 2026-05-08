@@ -4,8 +4,9 @@
   --ease-out: cubic-bezier(0,.57,.43,.99);
   --ease-in-out: cubic-bezier(.42, .01, .16, .96);
 
-  --bg-url: ""; /* url('/public/assets/bg.jpg') */
-  --bg-opacity: 0;
+  /* --bg-url: ""; */
+  --bg-url: url('/public/assets/diamond.png');
+  --bg-opacity: 0.02;
   
   --black: #000;
   --gray1: #383845;

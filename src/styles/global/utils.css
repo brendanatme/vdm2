@@ -91,6 +91,7 @@
 }
 
 .pageBody {
+  /* background: url('/public/assets/diamond.png') repeat 0 0; */
   flex-grow: 1;
   min-height: 0;
   width: 100%;
